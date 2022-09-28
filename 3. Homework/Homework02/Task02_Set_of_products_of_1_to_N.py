@@ -3,15 +3,17 @@
 # Examples: n = 4, then [1, 2, 6, 24] (1, 1*2, 1*2*3, 1*2*3*4)
 
 # ============ OPTION 1 ======================
+# Without creating a list
 # n = int(input('Enter a number: '))
 
 # product = 1
 
 # for i in range(1, n+1):
 #     product *= i
-#     print(product, end=" ")
+#     print(product, end=" ") 
 
 # ============ OPTION 2 ======================
+# With a list
 n = int(input('Enter a number: '))
 
 set = []
