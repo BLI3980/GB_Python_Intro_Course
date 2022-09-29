@@ -24,10 +24,25 @@
 #         else:
 #             print('X < 0 and Y < 0')
 
-a = 1234
-# Entire time - time without seconds = getting seconds only
-print(a - (a // 60)*60)
-# Time without seconds - time without seconds
-print(a // 60 - (a // 60 // 60)*60)
-print(a // 60 // 60 - (a // 60 // 60 // 24)*24)
-print(a // 60 // 60 // 24 - (a // 60 // 60 // 24//365)*365)
+# =============================================================
+# a = 1234
+# # Entire time - time without seconds = getting seconds only
+# print(a - (a // 60)*60)
+# # Time without seconds - time without seconds
+# print(a // 60 - (a // 60 // 60)*60)
+# print(a // 60 // 60 - (a // 60 // 60 // 24)*24)
+# print(a // 60 // 60 // 24 - (a // 60 // 60 // 24//365)*365)
+
+# =============================================================
+import random
+n = int(input('Enter the size of the list: '))
+myList = []
+for i in range(n-1):
+    myList.append(random.randint(0, 10))
+print(myList)
+
+for i in range(0, 2, len(myList)-1):
+    sum += myList[i]
+    print(sum, myList[i])
+
+print(sum)
