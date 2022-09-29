@@ -10,7 +10,7 @@
 
 # for i in range(1, n+1):
 #     product *= i
-#     print(product, end=" ") 
+#     print(product, end=" ")
 
 # ============ OPTION 2 ======================
 # With a list
@@ -22,4 +22,4 @@ for i in range(1, n+1):
     value = value * i
     set.append(value)
 
-print(set)
+print(f'The resulting set of products of {5} elements is {set}')

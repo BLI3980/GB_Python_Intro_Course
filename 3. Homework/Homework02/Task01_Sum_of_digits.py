@@ -12,4 +12,4 @@ while num_int > 0:
     sum += cut_digit
     num_int //= 10
 
-print(sum)
+print(f'The sum of the digits of {num} are equal to {sum}')

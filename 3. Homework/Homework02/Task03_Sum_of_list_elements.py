@@ -2,7 +2,7 @@
 # and output the sum of all elements of the subsequence
 # Example: n = 6: [2, 2, 2, 2, 2, 3] -> 13
 
-# ========== OPTION 1 ==============================
+# ========== OPTION 1. Dictionary ==============================
 # n = int(input('Enter how long the list should be: '))
 
 # dic = {}
@@ -14,7 +14,7 @@
 
 # print(f'n = {n}: {dic} -> {sum}')
 
-# ========== OPTION 2 ==============================
+# ========== OPTION 2. List ==============================
 n = int(input('Enter how long the list should be: '))
 
 list_ = []
