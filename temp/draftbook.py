@@ -34,15 +34,34 @@
 # print(a // 60 // 60 // 24 - (a // 60 // 60 // 24//365)*365)
 
 # =============================================================
-import random
-n = int(input('Enter the size of the list: '))
-myList = []
-for i in range(n-1):
-    myList.append(random.randint(0, 10))
-print(myList)
+# import random
+# n = int(input('Enter the size of the list: '))
+# myList = []
+# for i in range(n-1):
+#     myList.append(random.randint(0, 10))
+# print(myList)
 
-for i in range(0, 2, len(myList)-1):
-    sum += myList[i]
-    print(sum, myList[i])
+# for i in range(0, 2, len(myList)-1):
+#     sum += myList[i]
+#     print(sum, myList[i])
 
-print(sum)
+# print(sum)
+# =============================================================
+
+
+def mix(n):
+    for i in range(len(n)//2):
+        # a = n[i]
+        # print(n[-i-1])
+        # n[i] = n[-i-1]
+        # n[-i-1] = a
+        n[i], n[-i-1] = n[-i-1], n[i]
+
+
+n = [1, 2, 3, 4, 5, 6, 7]
+print(n)
+mix(n)
+print(n)
+
+# То что в строках 4-6 написано, можно написать n[i], n[-i-1] = n[-i-1], n[i].
+# Код будет работать так же.

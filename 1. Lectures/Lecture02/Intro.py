@@ -174,6 +174,6 @@ def f(x):
 
 
 arg = 2
-print(type(arg))
+# print(type(arg))
 print(f(arg))
-print(type(f(arg)))
+# print(type(f(arg)))
