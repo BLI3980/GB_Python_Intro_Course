@@ -6,7 +6,6 @@
 
 import random
 
-# size = int(input('Enter the size of the list of real numbers: '))
 # Creating a list of random size between 3 and 9, filled with random integers between -10 to 10
 rand_list = random.sample(range(-10, 11), random.randint(3, 10))
 # Converting the list of integers into list of floats, rounded to two places
@@ -14,7 +13,7 @@ rand_float = [round(i*random.random(), 2) for i in rand_list]
 
 print(f'\n{rand_float}\n')
 
-min = rand_float[0] % 1
+min = 1
 max = rand_float[0] % 1
 for i in rand_float:
     dec = abs(i) % 1
@@ -24,5 +23,4 @@ for i in rand_float:
         min = dec
 
 print(f'The difference between max decimal ({round(max,2)}) and min decimal,')
-print(
-    f'which is greater than zero ({round(min,2)}) equals to: {round(max - min, 2)}\n')
+print(f'which is greater than zero ({round(min,2)}) equals to: {round(max - min, 2)}\n')

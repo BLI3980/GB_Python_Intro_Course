@@ -1,5 +1,5 @@
-# Task: Create a list of several numbers. Make a program calculates with sum of elements
-# with odd indices:
+# Task: Create a list of several numbers. Make a program which calculates
+# the sum of elements with odd indices:
 # Example: [2, 3, 5, 9, 3] -> number on odd indices are 3 and 9 -> sum = 12.
 
 import random
@@ -22,5 +22,5 @@ def Sum_Evens(list):  # Calculating the sum of numbers with odd indices.
 
 
 lst = Fill_List(list_size)
-print(lst)
-print(Sum_Evens(lst))
+print(f'Random list of several numbers:\n{lst}\n')
+print(f'The sum of elements on odd indices:\n{Sum_Evens(lst)}')
