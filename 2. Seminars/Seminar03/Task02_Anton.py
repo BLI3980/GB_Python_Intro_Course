@@ -24,7 +24,8 @@
 # Sample Output 2: 1 2 7 8
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==
 
-
+# ==================== INPUTS ===========================================
+# Sample input 1:
 fridges = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen',
            'anton',
            'aoooooooooontooooo',
@@ -36,42 +37,44 @@ fridges = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen'
            'unton'
            ]
 
+# Sample input 2:
 # fridges = ['222anton456', 'a1n1t1o1n1',
 #            '0000a0000n00t00000o000000n', 'gylfole', 'richard', 'ant0n']
 
 virus = list(input('Enter that hacker\'s name: ').lower())
 
-# def Search_Anton(list_to_search, name):  # Searching for Anton in fridge name
-#     for i in name:
-#         if i in list_to_search:
-#             found = True
-#             d = list_to_search.index(i)
-#             del list_to_search[:d+1]
-#         else:
-#             found = False
-#             return found
-#     if found:
-#         return found
-
-# for i in range(len(fridges)):
-# search_str = list(fridges[i])
-# if Search_Anton(search_str, anton):
-#     print(i+1, end=' ')
+# ==================== OPTION 1. USING LIST ===============================
 
 
-def Search_Virus(list_to_search, name):  # Searching for Anton in fridge name
-    for i in range(len(list_to_search)):  # Going through all strings in the list of fridges
-        word = list(list_to_search[i])
-        for j in name:                   # Looking for each letter of the name in each string
-            if j in word:
-                found = True
-                d = word.index(j)
-                del word[:d+1]
-            else:
-                found = False
-                break
-        if found:
-            print(i+1, end=' ')
+# def Search_Virus(list_to_search, name):  # Searching for Anton in fridge name
+#     for i in range(len(list_to_search)):  # Going through all strings in the list of fridges
+#         # Each string in the list of fridges converting to a list
+#         word = list(list_to_search[i])
+#         for j in name:                   # Looking for each letter of the name in each string
+#             if j in word:
+#                 found = True
+#                 del word[:word.index(j)+1]
+#             else:
+#                 found = False
+#                 break
+#         if found:
+#             print(i+1, end=' ')
 
 
-Search_Virus(fridges, virus)
+# Search_Virus(fridges, virus)
+
+# ==================== OPTION 2. USING STRING ===============================
+# def Search_Virus(list_to_search, name):  # Searching for Anton in fridge name
+#     for fridge in list_to_search:  # Going through all strings in the list of fridges
+#         fr_mod, count = fridge, 0
+#         for j in name:                   # Looking for each letter of the name in each string
+#             if fr_mod.find(j) > -1:
+#                 fr_mod = fr_mod[fr_mod.find(j):]
+#                 count += 1
+#                 if count == len(virus):
+#                     print(list_to_search.index(fridge)+1, end=' ')
+#             else:
+#                 break
+
+
+# Search_Virus(fridges, virus)

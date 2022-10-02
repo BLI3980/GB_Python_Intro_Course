@@ -1,6 +1,7 @@
 # Task: Create a list of real numbers.
 # Create a program which calculates the difference between
 # min and max of decimal parts of numbers.
+# However, min is not equal to zero.
 # Example: [1.1, 1.2, 3.1, 5. 10.01] -> 0.19
 
 import random
