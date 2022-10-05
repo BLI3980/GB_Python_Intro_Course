@@ -23,4 +23,13 @@ for i in rand_float:
         min = dec
 
 print(f'The difference between max decimal ({round(max,2)}) and min decimal,')
-print(f'which is greater than zero ({round(min,2)}) equals to: {round(max - min, 2)}\n')
+print(
+    f'which is greater than zero ({round(min,2)}) equals to: {round(max - min, 2)}\n')
+
+# ==================== OPTION 2 ===================================
+list_res = []
+for i in range(len(rand_float)):
+    if round(rand_float[i] - int(rand_float[i]), 2) != 0:
+        list_res.append(round(rand_float[i] - int(rand_float[i]), 2))
+
+print(max(list_res) - min(list_res))

@@ -30,7 +30,7 @@ fridges = ['osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen'
            'anton',
            'aoooooooooontooooo',
            'elelelelelelelelelel',
-           'ntoneeee',
+           'natonneeee',
            'tonee',
            '253235235a5323352n25235352t253523523235oo235523523523n',
            'antoooooooooooooooooooooooooooooooooooooooooooooooooooon',
@@ -78,3 +78,25 @@ virus = list(input('Enter that hacker\'s name: ').lower())
 
 
 # Search_Virus(fridges, virus)
+
+# ==================== OPTION 3. ===========================================
+
+
+def Search_Virus(list_to_search, name):
+    result = []  # Resulting list to where found elements will be put
+    count = 0
+    for i in name:  # For each letter of virus name
+        for j in range(count, len(list_to_search)):  # For
+            count += 1
+            if i == list_to_search[j]:
+                result.append(i)
+                break
+    if result == list(name):
+        return True
+    else:
+        return False
+
+
+for i in range(len(fridges)):
+    if Search_Virus(fridges[i], virus):
+        print(i+1, end=' ')
