@@ -1,3 +1,7 @@
+# Task: A number and required precision are given as the input. 
+# Calculate a number with given precision.
+# Example: n = pi, d = 0.001 -> 3.141
+
 # ============================= OPTION 1 ====================================
 import random
 import decimal

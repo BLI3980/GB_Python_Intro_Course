@@ -67,3 +67,24 @@
 # Код будет работать так же.
 
 
+# list1 = ['97', '+', '71', '-', '18', '-', 1, '-', '12']
+
+# list2 = []
+# # print(len(list1)-1)
+# for i in range(len(list1)):
+#     if i == 0:
+#         list2.append(list1[i])
+#     elif i % 2 != 0:
+#         list2.append(list1[i]+str(list1[i+1]))
+# print(list2)
+
+
+footballers_goals = {'Eusebio': 120, 'Cruyff': 104,
+                     'Pele': 150, 'Ronaldo': 132, 'Messi': 125}
+
+sorted_footballers_by_goals = sorted(
+    footballers_goals.items(), key=lambda x: x[1], reverse=True)
+converted_dict = dict(sorted_footballers_by_goals)
+
+print(converted_dict)
+# Output: {'Pele': 150, 'Ronaldo': 132, 'Messi': 125, 'Eusebio': 120, 'Cruyff': 104}
