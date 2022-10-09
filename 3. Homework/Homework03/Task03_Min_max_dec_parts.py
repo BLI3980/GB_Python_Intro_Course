@@ -4,6 +4,7 @@
 # However, min is not equal to zero.
 # Example: [1.1, 1.2, 3.1, 5. 10.01] -> 0.19
 
+# ==================== OPTION 1 ===================================
 import random
 
 # Creating a list of random size between 3 and 9, filled with random integers between -10 to 10
@@ -33,3 +34,13 @@ for i in range(len(rand_float)):
         list_res.append(round(rand_float[i] - int(rand_float[i]), 2))
 
 print(max(list_res) - min(list_res))
+
+# ==================== OPTION 3 ===================================
+list = [1.1, 1.2, 3.1, 10.01]
+mix_list = []
+
+for i in list:
+    mix_list.append(round(i-int(i), 2))
+
+print(list, end=' => ')
+print(max(mix_list) - min(mix_list))

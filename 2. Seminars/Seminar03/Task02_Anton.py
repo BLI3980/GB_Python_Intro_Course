@@ -100,3 +100,13 @@ def Search_Virus(list_to_search, name):
 for i in range(len(fridges)):
     if Search_Virus(fridges[i], virus):
         print(i+1, end=' ')
+
+# ==================== OPTION 4. ===========================================
+for i in range(int(input())):
+    s, virus, x = input(), 'anton', 0
+    for sym in s:
+        if sym == virus[x]:
+            x += 1
+        if x == 5:
+            print(i + 1, end=' ')
+            break

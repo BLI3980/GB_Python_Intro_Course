@@ -11,7 +11,7 @@ list_size = random.randint(5, 10)
 # Creating a random list of integers between 0 and 9
 rand_list = random.sample(range(0, 10), list_size)
 
-
+# ========================== OPTION 1 ====================================
 def Prod_Pairs(list):  # Creating new list with products of pairs
     res = []
     for i in range(len(list)//2):
@@ -24,3 +24,11 @@ def Prod_Pairs(list):  # Creating new list with products of pairs
 print(f'The entry list is: {rand_list}')
 res_list = Prod_Pairs(rand_list)
 print(f'The list of products of pairs is: {res_list}')
+
+# ========================== OPTION 2 ====================================
+import random
+b = int(input('Введите кол-во чисел в списке for 2# = '))
+list_b = list(random.randint(0, 10) for i in range(b))
+print(list_b)
+proiz_b = list(list_b[i]*list_b[-1*(1+i)] for i in range(b//2+1*(b%2)))
+print(proiz_b)
