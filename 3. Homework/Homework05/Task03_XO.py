@@ -9,13 +9,13 @@ positions = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9}
 
 
 def Table(positions):
-    print(f'-----------------------\n',
+    print(f'-+---+---+---+-\n',
           positions.get(1), positions.get(2), positions.get(3),
-          '\n-----------------------\n',
+          '\n-+---+---+---+-\n',
           positions.get(4), positions.get(5), positions.get(6),
-          '\n-----------------------\n',
+          '\n-+---+---+---+-\n',
           positions.get(7), positions.get(8), positions.get(9),
-          '\n-----------------------\n', sep='  |  ')
+          '\n-+---+---+---+-\n', sep=' | ')
 
 
 turn = 1

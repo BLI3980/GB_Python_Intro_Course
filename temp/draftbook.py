@@ -1,3 +1,10 @@
+# ====================== Colors ==============================
+# print("\033[31mThis is red font.\033[0m")
+# print("\033[32mThis is green font.\033[0m")
+# print("\033[33mThis is yellow font.\033[0m")
+# print("\033[34mThis is blue font.\033[0m")
+# ====================== Rules ==============================
+# ===========================================================
 
 # def quad_input():
 #     try:
@@ -129,19 +136,205 @@
 # else:
 #     print("No, List1 doesn't have all elements of the List2.")
 # ========================================================================
-import sys
-from termcolor import colored, cprint
+# import sys
+# from termcolor import colored, cprint
 
-positions = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9}
+# positions = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9}
 
-for i in positions.keys()
-if positions[i] == 'X' or positions[i] == 'O':
-    cprint("Attention!", 'red', attrs=['bold'], file=sys.stderr)
+# for i in positions.keys()
+# if positions[i] == 'X' or positions[i] == 'O':
+#     cprint("Attention!", 'red', attrs=['bold'], file=sys.stderr)
 
-print(f'-----------------------\n',
-      positions.get(1), positions.get(2), positions.get(3),
-      '\n-----------------------\n',
-      positions.get(4), positions.get(5), positions.get(6),
-      '\n-----------------------\n',
-      positions.get(7), positions.get(8), positions.get(9),
-      '\n-----------------------\n', sep='  |  ')
+# print(f'-----------------------\n',
+#       positions.get(1), positions.get(2), positions.get(3),
+#       '\n-----------------------\n',
+#       positions.get(4), positions.get(5), positions.get(6),
+#       '\n-----------------------\n',
+#       positions.get(7), positions.get(8), positions.get(9),
+#       '\n-----------------------\n', sep='  |  ')
+# ========================================================================
+
+# def Exceptions(num, candies):
+#     while True
+#     try:
+#         int(num)
+#         print(num)
+#         try:
+#             # 1 < int(num) < min(candies, 28)
+#             int(num) == 8
+#             # print(type(int(num)), num, min(candies, 28))
+#             # return int(num)
+#         except:
+#             print(num)
+#             print('You cannot take this amount of candies.')
+#             print(
+#                 f'Please take [\033[31m1 .. {min(candies, 28)}\033[0m] candies: ', end='')
+#             num = input()
+#             Exceptions(num, candies)
+#         else:
+#             return int(num)
+#     except ValueError:
+#         print(
+#             f'Please enter and integer number [1 .. {min(candies, 28)}]: ', end='')
+#         num = input()
+#         Exceptions(num, candies)
+#     else:
+#         return int(num)
+
+
+# def IsNum(type: str, num: str):
+#     try:
+#         type(num)
+#         return True
+#     except:
+#         return False
+
+
+# def EntryCheck(type=int):
+#     num = input('Enter a number: ')
+#     while not IsNum(type, num):
+#         num = input('This is not a number. Please enter an integer number: ')
+#     return int(num) * 2
+
+
+# print(EntryCheck())
+
+
+# def IsNum(type: str, num: str):
+#     try:
+#         type(num)
+#         return True
+#     except:
+#         return False
+
+
+# def EntryCheck(type=int):
+#     num = input('Enter a number: ')
+#     while not IsNum(type, num):
+#         num = input('This is not a number. Please enter an integer number: ')
+#     return int(num) * 2
+
+
+# def InRange(num, amount):
+#     while not 1 < num < min(amount, 28):
+#         print('num = ', num, 'amount = ', amount)
+#         print('Number is out of allowed range. Please try again. ')
+#         InRange(EntryCheck(), 250)
+#     else:
+#         return num
+
+
+# # print(IsNum())
+# # print(EntryCheck())
+# print(InRange(EntryCheck(), 250))
+
+
+# def EntryCheck(num: str, amount, type=int):
+#     try:
+#         1 < type(num) < min(amount, 28)
+#         return True
+#     except ValueError:
+#         print('This is not a number.')
+#         return False
+#     except:
+#         print('Number is outside allowed range.')
+#         return False
+
+
+# def EntryOk():
+#     num = ('Enter a number: ')
+#     while not EntryCheck(num, 250):
+#         print('Wrong entry. Please try again.')
+#     else:
+#         print(type(num), num)
+#         return num
+
+
+# print(EntryOk())
+
+
+# def getNumber01():  # Первый вариант
+#     while type:
+#         getNumber = input('Введите число: ')   # Ввод числа
+#         try:                                   # Проверка что getTempNumber преобразуется в число без ошибки
+#             int(getNumber)
+
+#         # Проверка на ошибку неверного формата (введены буквы)
+#         except ValueError:
+#             print('"' + getNumber + '"' + ' - не является числом')
+#         else:                                  # Если getTempNumber преобразован в число без ошибки, выход из цикла while
+#             break
+#     # возвращает модуль getTempNumber (для искл. отрицат. чисел)
+#     return getNumber
+
+
+# # print(getNumber01())
+
+
+# def InRange():
+#     temp = getNumber01
+#     # temp = int(input('Enter the number: '))
+#     print(type(temp), temp)
+#     while not 1 < temp < 28:
+#         print('Number is outside the range.')
+#         temp = getNumber01
+#         # temp = int(input('Enter the number: '))
+#     else:
+#         return temp
+
+
+# print(InRange())
+
+# ============ Exceptions for Candy game ================================
+
+
+# def protectinput(maxcand=28):
+#     num = input(f'Введите число конфет: ')
+#     while not num.isdigit():
+#         print('This is not a number.')
+#         num = input(f'Введите число конфет: ')
+#     if 0 < int(num) < maxcand + 1:
+#         return num
+#     else:
+#         return protectinput()
+
+
+# print(protectinput())
+
+
+def CheckInput():
+    input_num = input('Enter a number: ')
+    while not input_num.isdigit():
+        # print('This is not a number. Please try again.', end='')
+        input_num = input('Wrong entry. Please try again: ')
+    max_take = min(100, 28)
+    if 0 < int(input_num) < max_take:
+        return int(input_num)
+    else:
+        return CheckInput()
+
+
+print(CheckInput())
+
+# ============ Exceptions for XO game ================================
+
+
+# def take_input(player_token, board):
+#     valid = False
+#     while not valid:
+#         player_answer = input(
+#             f'Куда поставим {player_token}? Введите число 1 - 9: ')
+#         try:
+#             player_answer = int(player_answer)
+#         except:
+#             print('Некорректный ввод. Вы уверены, что ввели число?')
+#             continue
+#         if 1 <= player_answer <= 9:
+#             if (str(board[player_answer - 1]) not in 'XO'):
+#                 board[player_answer - 1] = player_token
+#                 valid = True
+#             else:
+#                 print('Эта клетка уже занята!')
+#         else:
+#             print('Некорректный ввод. Введите число от 1 до 9')
+# ===================================================================

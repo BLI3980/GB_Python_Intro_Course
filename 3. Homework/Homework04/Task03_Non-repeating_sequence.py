@@ -8,6 +8,8 @@ import random
 # integers between -10 and 10.
 list1 = [random.randint(-10, 10) for i in range(random.randrange(3, 10))]
 print(list1)
+list2 = [i for i in list1 if list1.count(i) == 1]
+print(list2)
 
 # ============================= OPTION 1 ===============================
 # list2 = []
@@ -31,7 +33,21 @@ print(list1)
 
 # print("Honey, what's your hurry", end='?')
 
-# ============================= OPTION 3 ===============================
+# ============================= OPTION 3 ? ===============================
 
 list2 = [i for i in list1 if list1.count(i) == 1]
 print(list2)
+
+# ============================= OPTION 4 ===============================
+# n = int(input("Введите число N: "))
+# i = 2
+# list = []
+
+# while i <= n:
+#     if n % i == 0:
+#         list.append(i)
+#         n //= i
+#         i = 2
+#     else:
+#         i += 1
+# print(f"Простые множители введенного числа указаны в списке: {list}")

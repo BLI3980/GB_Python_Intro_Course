@@ -156,6 +156,7 @@
 # data = '1 2 3 5 16 19 22'.split()
 # # Select function can be replaced by map (iteration)
 # res = map(int, data)
+# print(type(res))
 # # Where function can be replaced by filter
 # res = filter(lambda x: not x % 2, res)
 # res = list(map(lambda x: (x, x**2), res))
@@ -181,7 +182,7 @@
 # ENUMERATE
 # ========================================
 # Example:
-# enumerate (['Kazan', 'London', 'Chicago', 'Amsterdam']) ->
+# enumerate(['Kazan', 'London', 'Chicago', 'Amsterdam']) ->
 # -> [(0, 'Kazan'), (1, 'London'), (2, 'Chicago'), (3, 'Amsterdam')]
 # Note: same as previous enumerate cannot work more than once
 users = ['user1', 'user2', 'user3', 'user4', 'user5']

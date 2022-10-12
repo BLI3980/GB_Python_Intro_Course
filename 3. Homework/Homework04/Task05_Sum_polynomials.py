@@ -3,7 +3,7 @@
 # the summation of two polynomials into a new file.
 
 import math
-
+# ========================== OPTION 1 =========================================
 # Input strings from external files:
 # =======================
 print('======================')
@@ -138,3 +138,25 @@ with open('poly_sum.txt', 'w') as result:
         elif v < 0 and k == 0:
             result.write(f' - {int(math.fabs(v))}')
     result.write(' = 0')
+
+# ========================== OPTION 3 =========================================
+# Option only works if size and powers are the same in both polynomials
+
+# ffile1 = open('file1.txt', 'r')
+# ffile2 = open('file2.txt', 'r')
+# ffile3 = open('file3.txt', 'w')
+# file1 = ffile1.readline()
+# file2 = ffile2.readline()
+# for i in range(len(file1)):
+#     if file1[i-1] != '^':
+#         if file1[i].isnumeric():
+#             ffile3.write(str(int(file1[i])+int(file2[i])))
+#         else:
+#             ffile3.write(str(file1[i]))
+#     else:
+#         ffile3.write(str(file1[i]))
+# ffile1.close
+# ffile2.close
+# ffile3.close
+
+# ========================== OPTION 4 =========================================
