@@ -14,12 +14,26 @@
 
 # ============ OPTION 2 ======================
 # With a list
+# n = int(input('Enter a number: '))
+
+# set = []
+# value = 1
+# for i in range(1, n+1):
+#     value = value * i
+#     set.append(value)
+
+# print(f'The resulting set of products of {5} elements is {set}')
+
+# ============ OPTION 3. IMPROVED ======================
+from re import I
+
+
 n = int(input('Enter a number: '))
 
 set = []
 value = 1
-for i in range(1, n+1):
-    value = value * i
-    set.append(value)
 
-print(f'The resulting set of products of {5} elements is {set}')
+
+res = [lambda x: x*2 for i in range(1, n+1)]
+
+print(res)

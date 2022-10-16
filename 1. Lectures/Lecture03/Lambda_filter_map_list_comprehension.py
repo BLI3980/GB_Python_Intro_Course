@@ -82,14 +82,14 @@
 # ========================= LAMBDA, MAP, FILTER ===============================
 # task:
 # ========================================
-# list = [1, 2, 3, 5, 16, 19, 22]
+list = [1, 2, 3, 5, 16, 19, 22]
 
 
-# def f(i): return i**2
+def f(i): return i**2
 
 
-# list_res = [(i, f(i)) for i in list if i % 2 == 0]
-# print(list_res)
+list_res = [(i, f(i)) for i in list if i % 2 == 0]
+print(list_res)
 # ========================================
 # data = '1 2 3 5 16 19 22 '
 
@@ -185,12 +185,12 @@
 # enumerate(['Kazan', 'London', 'Chicago', 'Amsterdam']) ->
 # -> [(0, 'Kazan'), (1, 'London'), (2, 'Chicago'), (3, 'Amsterdam')]
 # Note: same as previous enumerate cannot work more than once
-users = ['user1', 'user2', 'user3', 'user4', 'user5']
-ids = [4, 5, 9, 14, 7]
-salary = [111, 222, 333]
+# users = ['user1', 'user2', 'user3', 'user4', 'user5']
+# ids = [4, 5, 9, 14, 7]
+# salary = [111, 222, 333]
 
-data = list(enumerate(users))
-print(data)
+# data = list(enumerate(users))
+# print(data)
 
 
 # ===================================================================

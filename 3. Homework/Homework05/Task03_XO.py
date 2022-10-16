@@ -1,4 +1,4 @@
-# Task: Create a program for Tic-tak-toe game.
+# Task: Create a program for Tic-tac-toe game.
 
 import os
 import time

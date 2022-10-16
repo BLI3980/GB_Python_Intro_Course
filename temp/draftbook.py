@@ -302,19 +302,19 @@
 # print(protectinput())
 
 
-def CheckInput():
-    input_num = input('Enter a number: ')
-    while not input_num.isdigit():
-        # print('This is not a number. Please try again.', end='')
-        input_num = input('Wrong entry. Please try again: ')
-    max_take = min(100, 28)
-    if 0 < int(input_num) < max_take:
-        return int(input_num)
-    else:
-        return CheckInput()
+# def CheckInput():
+#     input_num = input('Enter a number: ')
+#     while not input_num.isdigit():
+#         # print('This is not a number. Please try again.', end='')
+#         input_num = input('Wrong entry. Please try again: ')
+#     max_take = min(100, 28)
+#     if 0 < int(input_num) < max_take:
+#         return int(input_num)
+#     else:
+#         return CheckInput()
 
 
-print(CheckInput())
+# print(CheckInput())
 
 # ============ Exceptions for XO game ================================
 

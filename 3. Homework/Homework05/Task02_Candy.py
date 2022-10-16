@@ -13,6 +13,8 @@ start_amnt = randint(100, 500)
 take_max = 28
 
 # ================ Rules Description ========================
+
+
 def Rules():
     print(f'''
 Rules:
@@ -87,24 +89,6 @@ def CheckInput(amount_left):
             f'Please take [\033[31m1 .. {max_take}\033[0m] candies: ', end='')
         return CheckInput(amount_left)
 
-# ================= Game =====================================
-
-
-# def Game(pl1: str, pl2: str, turn: int, count: int):
-#     left = count
-#     Suggest(player1, player2, start_amnt, turn)
-#     taken = CheckInput(left)
-#     left = left - taken
-#     while left > 0:
-#         turn = -turn
-#         Suggest(player1, player2, left, turn)
-#         taken = CheckInput(left)
-#         left = left - taken
-#     else:
-#         if turn == 1 and left == 0:
-#             print(f'\n\033[31m{pl1}\033[0m has WON!!!.\n')
-#         else:
-#             print(f'\n\033[32m{pl2}\033[0m has WON!!!.\n')
 
 # ================= Game =====================================
 
