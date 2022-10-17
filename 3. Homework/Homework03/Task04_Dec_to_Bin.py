@@ -15,7 +15,7 @@ def Dec_to_Bin(num):
 
 print(f'Decimal number {dec} in binary system is: {Dec_to_Bin(dec)}')
 
-# ========================= OPTION 1 ==============================
+# ========================= OPTION 2 ==============================
 
 a = int(input('Введите число = '))
 print(bin(a))

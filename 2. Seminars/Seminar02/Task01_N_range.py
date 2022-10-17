@@ -10,14 +10,18 @@
 #     print(element**i, end=" ")
 
 # ================ OPTION 2 =======================
-x = int(input('введите число: '))
-count = 0
-array = []
-a = 1
+# x = int(input('введите число: '))
+# count = 0
+# array = []
+# a = 1
 
-while count < x:
-    array.append(a)
-    a = a * (-3)
-    count += 1
+# while count < x:
+#     array.append(a)
+#     a = a * (-3)
+#     count += 1
 
-print(f'{x} = {array}')
+# print(f'{x} = {array}')
+
+# ================ OPTION 1. IMPROVED =======================
+a = -3
+print(*list(a**i for i in range(int(input('Enter any number: ')))))

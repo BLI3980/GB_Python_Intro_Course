@@ -2,19 +2,7 @@
 # and output the sum of all elements of the subsequence
 # Example: n = 6: [2, 2, 2, 2, 2, 3] -> 13
 
-# ========== OPTION 1. Dictionary ==============================
-# n = int(input('Enter how long the list should be: '))
-
-# dic = {}
-# sum = 0
-
-# for i in range(1, n + 1):
-#     dic[i] = int(round((1 + 1/i) ** i, 0))
-#     sum += dic[i]
-
-# print(f'n = {n}: {dic} -> {sum}')
-
-# ========== OPTION 2. List ==============================
+# ========================= ORIGINAL ==============================
 # n = int(input('Enter how long the list should be: '))
 
 # list_ = []
@@ -25,3 +13,14 @@
 #     sum += list_[i]
 
 # print(f'n = {n}: {list_} -> {sum}')
+
+# ========================= IMPROVED ==============================
+n = int(input('Enter how long the list should be: '))
+
+
+def f(x):
+    res = int(round((1 + 1/(x+1)) ** (x+1), 0))
+    return res
+
+
+print(list(f(i) for i in range(n)))

@@ -1,29 +1,23 @@
-# Task: преобразовать список таким образом
+# Task:  Вводится строка. Требуется, используя введенную строку, сформировать
+# N=10 пар кортежей с формате:
+# (символ, порядковый индекс)
+# Первый индекс имеет значение 0.
+# Строка может быть короче 10 символов, а может быть и длиннее. То есть, число
+# пар может быть 10 и менее. Используя функцию zip, сформируйте указанные кортежи
+# и сохраните в список с именем lst.
 
-# a = [4, 3, -10, 1, 7, 12]  ->  [4, -10, 12, 3, 1, 7]
+# ========================== OPTION 1 =======================================
+str = input('Enter a string: ')
 
-# ================== OPTION 1 ============================
-# a = [4, 3, -10, 1, 7, 12]
-# b = [i for i in a if i % 2 == 0]
-# c = [i for i in a if i % 2 != 0]
-# print(a, '->', b+c)
+temp = [i for i in str]
+lst1 = list(zip(temp, range(11)))  # Option with list being zipped
+lst2 = list(zip(str, range(11)))  # Option with string being zipped
 
-# ================== OPTION 2 ============================
+print(temp)
+print(lst1)
+print(lst2)
 
-a = [4, 3, -10, 1, 7, 12]
-a.sort(key=lambda x: x % 2)
-print(a)
 
-# sort - method
-# sorted - function
 
-# ================== OPTION 2 ============================
-# def tr(a, b, c):
-#     return a + b > c and b + c > a and a + c > b
-# print(tr(1, 2, 3))
 
-# ================== OPTION 2 ============================
-l = [i for i in range(10, 100)]
-l1 = list(filter(lambda x: x % 9 == 0, l))
-l2 = sum(list(map(lambda x: x**2, l1)))
-print(l2)
+

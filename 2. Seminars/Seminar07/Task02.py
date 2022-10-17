@@ -1,7 +1,6 @@
 # Task: записать в список все буквы строки f='privet'
-# f = 'privet'
-# print(sorted("privet"))
 
+# ========================== OPTION 1 =======================================
 f = 'privet'
 result = [i for i in f]
 print(result)

@@ -139,7 +139,8 @@ with open('poly_sum.txt', 'w') as result:
             result.write(f' - {int(math.fabs(v))}')
     result.write(' = 0')
 
-# ========================== OPTION 3 =========================================
+# ========================== OPTION 2 =========================================
+# From the lecturer:
 # Option only works if size and powers are the same in both polynomials
 
 # ffile1 = open('file1.txt', 'r')
@@ -158,5 +159,3 @@ with open('poly_sum.txt', 'w') as result:
 # ffile1.close
 # ffile2.close
 # ffile3.close
-
-# ========================== OPTION 4 =========================================

@@ -3,7 +3,7 @@
 # coefficients between 0 and 100.
 # Create a polynomial and write it into a file.
 
-# ========================== OPTION 2 ==================================
+# ========================== OPTION 1 ==================================
 # from random import randint
 # import random
 # k = random.randint(1, 10)

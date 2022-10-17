@@ -82,14 +82,14 @@
 # ========================= LAMBDA, MAP, FILTER ===============================
 # task:
 # ========================================
-list = [1, 2, 3, 5, 16, 19, 22]
+# list = [1, 2, 3, 5, 16, 19, 22]
 
 
-def f(i): return i**2
+# def f(i): return i**2
 
 
-list_res = [(i, f(i)) for i in list if i % 2 == 0]
-print(list_res)
+# list_res = [(i, f(i)) for i in list if i % 2 == 0]
+# print(list_res)
 # ========================================
 # data = '1 2 3 5 16 19 22 '
 

@@ -3,14 +3,10 @@
 # Example: [1, 2, 3, 3, 4, 5, 5] -> [1, 2, 4]
 
 # ============================= INPUT ===============================
-import random
-# Create a list of random size between 3 and 10, filled with random
-# integers between -10 and 10.
-# list1 = [random.randint(-10, 10) for i in range(random.randrange(3, 10))]
 list1 = [1, 2, 3, 3, 4, 5, 5]
 print(list1)
 
-# ============================= OPTION 1 ===============================
+# ============================= ORIGINAL 1 ===============================
 # list2 = []
 # for i in list1:
 #     count = 0
@@ -21,7 +17,7 @@ print(list1)
 #         list2.append(i)
 # print(list2)
 
-# ============================= OPTION 2 ===============================
+# ============================= ORIGINAL 2 ===============================
 # list2 = []
 # for i in list1:
 #     if i not in list2:
@@ -30,7 +26,7 @@ print(list1)
 #         del list2[list2.index(i)]
 # print(list2)
 
-# ============================= OPTION 3 ===============================
+# ============================= IMPROVED ===============================
 
 list2 = [i for i in list1 if list1.count(i) == 1]
 print(list2)

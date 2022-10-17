@@ -338,3 +338,22 @@
 #         else:
 #             print('Некорректный ввод. Введите число от 1 до 9')
 # ===================================================================
+
+# from itertools import product
+# import math
+# n = int(input())
+# print(sum(1/i for i in range(1, n+1)) - math.log(n))
+
+# print(math.prod(1, 2, 3))
+
+# a = []
+# a = list(map(lambda x: x, range(1, 5)))
+# print(a)
+
+# f_list = []
+# for i in range(5):
+#     def f(j, i=i): return i
+#     f_list.append(f)
+#     print(f_list[i](0))
+
+
