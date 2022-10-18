@@ -1,4 +1,3 @@
-phone_book = read_csv('phonebook.csv')
 
 
 def read_csv(filename: str) -> list:
@@ -10,6 +9,10 @@ def read_csv(filename: str) -> list:
             data.append(record)
 
     return data
+
+
+phone_book = read_csv('phonebook.csv')
+print(phone_book)
 
 
 def show_menu() -> int:
