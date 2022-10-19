@@ -3,9 +3,9 @@
 # Example: [1, 2, 3, 3, 4, 5, 5] -> [1, 2, 4]
 
 # ============================= INPUT ===============================
-list1 = [1, 2, 3, 3, 4, 5, 5]
-print(list1)
+# list1 = [1, 2, 3, 3, 4, 5, 5]
 
+# print(list1)
 # ============================= ORIGINAL 1 ===============================
 # list2 = []
 # for i in list1:
@@ -28,5 +28,14 @@ print(list1)
 
 # ============================= IMPROVED ===============================
 
-list2 = [i for i in list1 if list1.count(i) == 1]
-print(list2)
+# list2 = [i for i in list1 if list1.count(i) == 1]
+# print(list2)
+
+# ============================= IMPROVED ===============================
+# result_list = list(filter(lambda a: list1.count(a) == 1, list1))
+# print(list2)
+
+# ============================= IMPROVED ===============================
+numbers = [2, 3, 4, 5, 6, 7, 5]
+diff = list([a*b for a, b in zip(numbers, numbers[:(len(numbers)//2) - 1: -1])])
+print(diff)

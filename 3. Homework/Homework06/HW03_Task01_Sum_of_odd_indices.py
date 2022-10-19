@@ -28,5 +28,6 @@
 
 # ========================= IMPROVED ==============================
 
-my_list = [8, 5, 7, 3, 6]
-print(sum(my_list[i] for i in range(len(my_list)) if i % 2))
+# my_list = [8, 5, 7, 3, 6]
+# print(sum(my_list[i] for i in range(len(my_list)) if i % 2))
+
