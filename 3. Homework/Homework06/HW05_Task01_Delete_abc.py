@@ -40,15 +40,3 @@
 # print(list)
 # lis = list.replace("абв", "")
 # print(lis)
-
-# ============================= IMPROVED ===============================
-
-
-def check_index(array, x):
-    if array.index(x) % 2 != 0:
-        return True
-    else:
-        return False
-
-
-abc = list(map(int, input('input numbers list: ').split()))

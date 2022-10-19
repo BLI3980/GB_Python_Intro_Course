@@ -36,6 +36,12 @@
 # print(list2)
 
 # ============================= IMPROVED ===============================
-numbers = [2, 3, 4, 5, 6, 7, 5]
-diff = list([a*b for a, b in zip(numbers, numbers[:(len(numbers)//2) - 1: -1])])
-print(diff)
+# numbers = [2, 3, 4, 5, 6, 7, 5]
+# # a = len(numbers)
+# # b = len(numbers)//2
+# # c = len(numbers)//2-1
+# # print(a, b, c)
+# numbers1 = numbers[:(len(numbers)//2)-1:-1]
+# print(numbers1)
+# diff = list([a*b for a, b in zip(numbers, numbers[:(len(numbers)//2) - 1: -1])])
+# print(diff)
