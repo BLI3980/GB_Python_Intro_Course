@@ -2,9 +2,8 @@ from pathlib import Path
 import json
 import csv
 
-# lis1 = [1.1, 2.2, 3.001, 4.4]
-# lis2 = [round(lis1[n] - round(lis1[n]), 10) for n in range(0, len(lis1))]
-# print('Задание 2: ', max(lis2)-min(lis2))
+# Show a menu to choose an action
+# =======================================================================
 
 
 def show_menu() -> int:
@@ -20,6 +19,9 @@ def show_menu() -> int:
     print("8. Экспортировать данные в формате csv")
     print("9. Закончить работу")
     return int(input("Введите номер необходимого действия: "))
+
+# Uploads DB file in csv extension and outputs it to the format we like:
+# =======================================================================
 
 
 def read_csv() -> list:
@@ -37,6 +39,9 @@ def read_csv() -> list:
             employee.append(temp)
     return employee
 
+# Uploads DB file in json extension and outputs it to the format we like:
+# =======================================================================
+
 
 def read_json() -> list:
     employee = []
@@ -46,6 +51,9 @@ def read_json() -> list:
             employee.append(temp)
     return employee
 
+# Takes formatted input and writes what is needed to output csv file
+# =======================================================================
+
 
 def write_csv(employees: list):
     with open(Path.cwd() / 'database.csv', 'w', encoding='utf-8') as fout:
@@ -53,16 +61,25 @@ def write_csv(employees: list):
         for employee in employees:
             csv_writer.writerow(employee.values())
 
+# Takes formatted input and writes what is needed to output json file
+# =======================================================================
+
 
 def write_json(employees: list):
     with open(Path.cwd() / 'database02.json', 'w', encoding='utf-8') as fout:
         for employee in employees:
             fout.write(json.dumps(employee) + '\n')
 
+# Finds an employee by his ID
+# =======================================================================
+
 
 for employee in employees:
     if employee['id'] == id:
         return employee
+
+# Finds an employee by salary range
+# =======================================================================
 
 
 def find_employees_by_salary_range(employees: list) -> list:
@@ -74,6 +91,8 @@ def find_employees_by_salary_range(employees: list) -> list:
     return result
 
 
+# Finds an employee by his last name
+# =======================================================================
 for employee in employees:
     if employee['last_name'] == last_name:
         return employee

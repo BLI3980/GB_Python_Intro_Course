@@ -1,32 +1,10 @@
 # import a_data_provider as prov
+from tabulate import tabulate
 import b_logger as log
 import a_data_read as read
 
-
-# def temperature_view(sensor):
-#     data = prov.get_temperature(sensor)
-#     log.temperature_logger(data)
-#     return data
-
-
-# def pressure_view(sensor):
-#     data = prov.get_pressure(sensor)
-#     log.pressure_logger(data)
-#     return data
-
-
-# def wind_speed_view(sensor):
-#     data = prov.get_wind_speed(sensor)
-#     log.wind_speed_logger(data)
-#     return data
-
-def view(data):
-    output = read.read_data(data)
-    print('\nPHONEBOOK:\n')
-    print(output)
-
-
-# view('phonebook.csv')
+# Module interacts with user:
+# Asks what user wants to do, returns any output to terminal
 
 def show_menu() -> int:
     print("\nВыберите необходимое действие:\n"
@@ -38,3 +16,11 @@ def show_menu() -> int:
           "6. Закончить работу")
     choice = int(input())
     return choice
+
+def print_tables(data):
+    table = 
+    header1 = ['ID', 'SURNAME', 'NAME', 'PHONE', 'DESCRIPTION']
+    print(tabulate(table, headers=header1,
+                   tablefmt='fancy_grid', showindex='always'))
+
+print_tables()
