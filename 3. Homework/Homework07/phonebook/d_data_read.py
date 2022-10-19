@@ -20,7 +20,10 @@
 #     return (get_temperature(sensor), get_pressure(sensor), get_wind_speed(sensor))
 
 
-def read_data(filename: str):
+# Takes DB from csv file and changes it to a formate we want for all
+# future work
+# =======================================================================
+def data_read(filename: str):
     data = []
     fields = ['Surname', 'Name', 'Phone', 'Comment']
     with open(filename, 'r', encoding='utf-8') as book:

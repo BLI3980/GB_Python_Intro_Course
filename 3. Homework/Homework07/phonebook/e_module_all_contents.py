@@ -1,14 +1,15 @@
 
-import a_data_read as input
+import d_data_read as book
 
-#  Takes formatted data and outputs the entire table to terminal
+#  Takes formatted data and outputs the entire table to tabulated format
+# =======================================================================
 
 
 def show_all(data):
-    book = input.read_data(data)
+    table = book.data_read(data)
     data1 = []
     temp = []
-    for item in book:
+    for item in table:
         for value in item.values():
             temp.append(value)
         data1.append(temp)
@@ -16,8 +17,9 @@ def show_all(data):
     return data1
 
 
-# ===================== DELETE LATER ===========================
-# show_all('phonebook.csv')
+print(show_all('phonebook.csv'))
+# ===================== DELETE LATER ====================================
+
 
 # table = [['', '', '', ''],
 #          ['', '', '', ''],

@@ -39,6 +39,9 @@ def read_csv() -> list:
             employee.append(temp)
     return employee
 
+
+# print(read_csv())
+
 # Uploads DB file in json extension and outputs it to the format we like:
 # =======================================================================
 
@@ -74,26 +77,32 @@ def write_json(employees: list):
 # =======================================================================
 
 
-for employee in employees:
-    if employee['id'] == id:
-        return employee
+employees = read_csv()
 
+
+def find_employee_by_id(employees: list) -> list:
+    for employee in employees:
+        if employee['id'] == 4:
+            return employee
+
+
+print(find_employee_by_id(employees))
 # Finds an employee by salary range
 # =======================================================================
 
 
-def find_employees_by_salary_range(employees: list) -> list:
-    result = []
-    lo, hi = get_salary_range()
-    for employee in employees:
-        if lo <= employee["salary"] <= hi:
-            result.append(employee)
-    return result
+# def find_employees_by_salary_range(employees: list) -> list:
+#     result = []
+#     lo, hi = get_salary_range()
+#     for employee in employees:
+#         if lo <= employee["salary"] <= hi:
+#             result.append(employee)
+#     return result
 
 
 # Finds an employee by his last name
 # =======================================================================
-for employee in employees:
-    if employee['last_name'] == last_name:
-        return employee
-employees = read_csv()
+# for employee in employees:
+#     if employee['last_name'] == last_name:
+#         return employee
+# employees = read_csv()
