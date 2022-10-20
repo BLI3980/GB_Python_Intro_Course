@@ -1,8 +1,10 @@
-import d_html_creator as hc
-import e_xml_generator as xg
-import a_data_provider as dp
+import b_controller as control
 
-# print(hc.create())
-# print(xg.create())
+# Just a button.
 
-hc.new_create(xg.new_create(dp.data_collection()))
+
+def button():
+    control.controller()
+
+
+button()

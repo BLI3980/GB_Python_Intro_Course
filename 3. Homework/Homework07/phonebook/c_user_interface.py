@@ -1,14 +1,17 @@
 from tabulate import tabulate
 from time import sleep
-import d_data_read as book
+import d_data_read as read
 import e_module_all_contents as all
 import f_module_find_by_sn as surname
 import g_module_find_by_sn_nm as name
+import h_module_find_by_phone as phone
+import i_module_add_new as add
+import j_module_output as text
 
-# Module interacts with user
+# Module interacts with user.
 
 
-# Asks what user wants to dd in order to return any output to terminal
+# Asks what user wants to do with phone book.
 # =======================================================================
 def show_menu() -> int:
     print("\nChoose the action you want to do:\n"
@@ -17,13 +20,12 @@ def show_menu() -> int:
           "3. Find a person by surname and name\n"
           "4. Find a person by phone number\n"
           "5. Add new person to the phonebook\n"
-          "6. Save the phonebook in text format\n"
-          "7. End the work")
+          "6. Save the phonebook in text format")
     choice = int(input('Choose the corresponding number of action: '))
     return choice
 
 
-# Asks if user wants to continue in order to make further action
+# Asks if user wants to continue in order to make further action.
 # =======================================================================
 
 def if_continue() -> int:
@@ -32,44 +34,45 @@ def if_continue() -> int:
     return select
 
 
-# # Choices
+# # User choices.
 # # =======================================================================
-# def choices(select):
-#     if select == 1:
-#         print_tables()
-#     # if select == 2:
-#     #     action2 = 2
-#     # if select == 3:
-#     #     action3 = 3
-#     # if select == 4:
-#     #     action4 = 4
-#     # if select == 5:
-#     #     action5 = 6
 
-# Takes a table based on user choice and outputs it to terminal
-# =======================================================================
-
-
-def print_tables(choice: int) -> None:
-    data = 'phonebook.csv'
+def choices(choice: int) -> None:
+    data = read.phonebook()
     sleep(1)
     if choice == 1:
         table = all.show_all(data)
         print('\nThe entire phonebook:\n')
+        print_table(table)
     elif choice == 2:
         table = surname.find_by_surname(data)
-        print('\nThe Search by surname:\n')
+        print('\nThe search by surname:\n')
+        print_table(table)
     elif choice == 3:
         table = name.find_by_surname_name(data)
-        print('\nThe Search by surname and name:\n')
+        print('\nThe search by surname and name:\n')
+        print_table(table)
+    elif choice == 4:
+        table = phone.find_by_phone(data)
+        print('\nThe search by phone number:\n')
+        print_table(table)
+    elif choice == 5:
+        table = add.add_person()
+        print('\nThese details have been added to the phonebook:\n')
+        print_table(table)
+    elif choice == 6:
+        text.write_txt(data)
+        print('\nThe output text file has been created in DB folder.\n')
     else:
-        print('The rest of the work in not done yet.....')
-
-    header1 = ['ID', 'SURNAME', 'NAME', 'PHONE', 'DESCRIPTION']
-    print(tabulate(table, headers=header1,
-                   tablefmt='fancy_grid', showindex='always'))
+        print('The other options are yet to be developed....')
     sleep(1)
 
 
-# print_tables(show_menu())
-# if_continue()
+# Table format for terminal.
+# =======================================================================
+
+def print_table(table: list) -> None:
+    header1 = ['SURNAME', 'NAME', 'PHONE', 'DESCRIPTION']
+    print(tabulate(table, headers=header1,
+                   tablefmt='fancy_grid', showindex='false'))
+    sleep(1)

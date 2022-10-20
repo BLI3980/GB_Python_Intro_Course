@@ -1,12 +1,16 @@
 import d_data_read as read
 
 
+#  Searches for a unique person by search surname and first name.
+# =======================================================================
+
+
 def find_by_surname_name(data: list) -> list:
     book = read.data_read(data)
     surname_list = []
     temp = []
-    surname = input('Enter surname: ')
-    firstname = input('Enter firstname: ')
+    surname = input('\nEnter surname: ')
+    firstname = input('Enter first name: ')
     for person in book:
         if person['Surname'] == surname and person['Name'] == firstname:
             for value in person.values():
@@ -16,4 +20,3 @@ def find_by_surname_name(data: list) -> list:
     return surname_list
 
 
-# print(find_by_surname_name('phonebook.csv'))
