@@ -357,3 +357,4 @@
 #     print(f_list[i](0))
 
 
+print(sum(2))

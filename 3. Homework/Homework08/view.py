@@ -2,10 +2,22 @@ from inspect import CO_ASYNC_GENERATOR
 from pathlib import Path
 import csv
 
+# Show a menu to choose an action (View).
+# =======================================================================
 
-with open(Path.cwd() / '3. Homework/Homework08/DB/database.csv', 'r', encoding='utf-8') as fin:
-    csv_reader = csv.reader(fin)
-    for row in csv_reader:
-        print(row)
 
-# print(csv_reader)
+def show_menu() -> int:
+    print("\n" + "=" * 20)
+    print("Выберите необходимое действие")
+    print("1. Найти сотрудника")
+    print("2. Сделать выборку сотрудников по должности")
+    print("3. Сделать выборку сотрудников по зарплате")
+    print("4. Добавить сотрудника")
+    print("5. Удалить сотрудника")
+    print("6. Обновить данные сотрудника")
+    print("7. Экспортировать данные в формате json")
+    print("8. Экспортировать данные в формате csv")
+    print("9. Закончить работу")
+    return int(input("Введите номер необходимого действия: "))
+
+

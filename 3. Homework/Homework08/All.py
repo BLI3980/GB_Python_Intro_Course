@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import csv
 
-# Show a menu to choose an action
+# Show a menu to choose an action (View).
 # =======================================================================
 
 
@@ -20,7 +20,8 @@ def show_menu() -> int:
     print("9. Закончить работу")
     return int(input("Введите номер необходимого действия: "))
 
-# Uploads DB file in csv extension and outputs it to the format we like:
+# Uploads DB file in csv extension and outputs it to the format we like.
+# (Data reed).
 # =======================================================================
 
 
@@ -42,7 +43,8 @@ def read_csv() -> list:
 
 # print(read_csv())
 
-# Uploads DB file in json extension and outputs it to the format we like:
+# Uploads DB file in json extension and outputs it to the format we like.
+# (Data read)
 # =======================================================================
 
 
@@ -54,7 +56,8 @@ def read_json() -> list:
             employee.append(temp)
     return employee
 
-# Takes formatted input and writes what is needed to output csv file
+# Takes formatted input and writes what is needed to output csv file.
+# (Log).
 # =======================================================================
 
 
@@ -64,7 +67,8 @@ def write_csv(employees: list):
         for employee in employees:
             csv_writer.writerow(employee.values())
 
-# Takes formatted input and writes what is needed to output json file
+# Takes formatted input and writes what is needed to output json file.
+# (Log).
 # =======================================================================
 
 
@@ -73,11 +77,11 @@ def write_json(employees: list):
         for employee in employees:
             fout.write(json.dumps(employee) + '\n')
 
-# Finds an employee by his ID
+# Finds an employee by his ID (Model)
 # =======================================================================
 
 
-employees = read_csv()
+# employees = read_csv()
 
 
 def find_employee_by_id(employees: list) -> list:
@@ -86,8 +90,10 @@ def find_employee_by_id(employees: list) -> list:
             return employee
 
 
-print(find_employee_by_id(employees))
-# Finds an employee by salary range
+# print(find_employee_by_id(employees))
+
+
+# Finds an employee by salary range (Model)
 # =======================================================================
 
 
@@ -100,7 +106,7 @@ print(find_employee_by_id(employees))
 #     return result
 
 
-# Finds an employee by his last name
+# Finds an employee by his last name (Model)
 # =======================================================================
 # for employee in employees:
 #     if employee['last_name'] == last_name:
