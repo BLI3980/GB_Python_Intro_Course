@@ -61,7 +61,10 @@ def work_with_database():
             salary_range = find_employees_by_salary_range(employees)
             print_table(salary_range)
         elif choice == 5:
-            add_new = add_employee(get_new_employee_details)
+            new = get_new_employee_details()
+            # print(type(new))
+            add_new = add_employee(new)
+            print(add_new)
             write_csv(source_csv, add_new)
         # elif choice == 4:
         #     user_data = get_new_user()

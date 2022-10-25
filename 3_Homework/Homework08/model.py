@@ -78,7 +78,8 @@ def write_csv(database: list, employee: list) -> list:
     with open(database, 'w', encoding='utf-8') as output:
         csv_writer = csv.writer(output)
         for row in employee:
-            csv_writer.writerow(row.values())
+            for employee in row:
+                csv_writer.writerow(employee.values())
 
 
 # Takes formatted input and writes what is needed to output json file.
