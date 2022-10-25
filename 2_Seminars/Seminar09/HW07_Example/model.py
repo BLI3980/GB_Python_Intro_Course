@@ -33,7 +33,7 @@ def read_txt(filename: str) -> list:
 
 
 def phonebook_txt():
-    phonebook = '2. Seminars/Seminar09/HW07_Example/DB_phone/phones.txt'
+    phonebook = '2_Seminars/Seminar09/HW07_Example/DB_phone/phones.txt'
     return phonebook
 
 
@@ -50,7 +50,7 @@ def read_csv(filename: str) -> list:
 
 
 def phonebook_csv():
-    phonebook = '2. Seminars/Seminar09/HW07_Example/DB_phone/phonebook.csv'
+    phonebook = '2_Seminars/Seminar09/HW07_Example/DB_phone/phonebook.csv'
     return phonebook
 
 

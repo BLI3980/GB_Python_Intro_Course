@@ -1,75 +1,149 @@
+from pathlib import Path
 import json
 import csv
+from view import (get_surname_name_to_search,
+                  get_position_to_search, get_salary_range_to_search)
 
 
 # Uploads DB file in csv extension and outputs it to the format we like.
-# (Model).
 # =======================================================================
 
 
-def read_csv() -> list:
-    employee = []
-    with open(Path.cwd() / 'database.csv', 'r', encoding='utf-8') as fin:
-        csv_reader = csv.reader(fin)
-        for row in csv_reader:
-            temp = {}
-            temp["id"] = int(row[0])
-            temp["last_name"] = row[1]
-            temp["first_name"] = row[2]
-            temp["position"] = row[3]
-            temp["phone_number"] = row[4]
-            temp["salary"] = float(row[5])
-            employee.append(temp)
-    return employee
+# def read_csv(table: str) -> list:
+#     employee = []
+#     with open(table, 'r', encoding='utf-8') as fin:
+#         csv_reader = csv.reader(fin)
+#         for row in csv_reader:
+#             temp = {}
+#             temp["id"] = int(row[0])
+#             temp["last_name"] = row[1]
+#             temp["first_name"] = row[2]
+#             temp["position"] = row[3]
+#             temp["phone_number"] = row[4]
+#             temp["salary"] = float(row[5])
+#             employee.append(temp)
+#     return employee
 
 
-# print(read_csv())
+def read_csv(table: str) -> list:
+    employees = []
+    fields = ['id', 'surname', 'first_name', 'last name',
+              'position', 'phone_number', 'salary']
+    with open(table, 'r', encoding='utf-8') as book:
+        for line in book:
+            record = dict(zip(fields, line.strip().split(',')))
+            employees.append(record)
+    return employees
+
+
+# print(read_csv(database(1)))
+# print()
+# print()
 
 # Uploads DB file in json extension and outputs it to the format we like.
-# (Model)
 # =======================================================================
 
 
-def read_json() -> list:
+def read_json(database: list) -> list:
     employee = []
-    with open(Path.cwd() / 'database02.json', 'r', encoding='utf-8') as fin:
+    with open(database, 'r', encoding='utf-8') as fin:
         for line in fin:
             temp = json.loads(line.strip())
             employee.append(temp)
     return employee
 
-# Finds an employee by his ID (Model)
+
+# print(read_json(database(2)))
+
+# Takes a DB chosen by user and transforms it into format for printing.
+# =======================================================================
+
+# def database(select: int) -> str:
+#     if select == 1:
+#         source = '3_Homework\Homework08\DB\database.csv'
+#         database =
+#     elif select == 2:
+#         source = '3_Homework\Homework08\DB\database02.json'
+#     return database
+
+
+# print(database(2))
+
+# Takes formatted input and writes what is needed to output csv file.
 # =======================================================================
 
 
+def write_csv(employees: list):
+    with open(Path.cwd() / 'database.csv', 'w', encoding='utf-8') as fout:
+        csv_writer = csv.writer(fout)
+        for employee in employees:
+            csv_writer.writerow(employee.values())
+
+# Takes formatted input and writes what is needed to output json file.
+# =============================================================================
+
+
+def write_json(employees: list):
+    with open(Path.cwd() / 'database02.json', 'w', encoding='utf-8') as fout:
+        for employee in employees:
+            fout.write(json.dumps(employee) + '\n')
+
+
+# Finds an employee by his last and first names.
+# =============================================================================
+def find_employee_by_surname_name(database: list) -> list:
+    surname, first_name = get_surname_name_to_search()
+    search_result = []
+    for employee in database:
+        if employee['surname'] == surname and\
+                employee['first_name'] == first_name:
+            search_result.append(employee)
+    if search_result == []:
+        print('\nThere is no such employee.\n')
+    return search_result
+
+
+# print(find_employee_by_last_first_names(
+#     read_csv('3_Homework\Homework08\DB\database.csv')))
+
+# Finds a list of employees by position.
+# =============================================================================
+def find_employees_by_position(database: list) -> list:
+    position = get_position_to_search()
+    search_result = []
+    not_found = False
+    for employee in database:
+        if employee['position'] == position:
+            search_result.append(employee)
+    if search_result == []:
+        print('\nThere is no such position in this organization.\n')
+    return search_result
+
+
+# Finds an employee by salary range.
+# =============================================================================
+
+def find_employees_by_salary_range(database: list) -> list:
+    lower, upper = get_salary_range_to_search()
+    print(type(lower))
+    search_result = []
+    for employee in database:
+        if lower <= float(employee["salary"]) <= upper:
+            search_result.append(employee)
+    if search_result == []:
+        print('\nThere is no salaries within specified range.\n')
+    return search_result
+
+
+# Finds an employee by his ID.
+# =============================================================================
 # employees = read_csv()
 
 
-def find_employee_by_id(employees: list) -> list:
-    for employee in employees:
-        if employee['id'] == 4:
-            return employee
+# def find_employee_by_id(employees: list) -> list:
+#     for employee in employees:
+#         if employee['id'] == 4:
+#             return employee
 
 
 # print(find_employee_by_id(employees))
-
-
-# Finds an employee by salary range (Model)
-# =======================================================================
-
-
-# def find_employees_by_salary_range(employees: list) -> list:
-#     result = []
-#     lo, hi = get_salary_range()
-#     for employee in employees:
-#         if lo <= employee["salary"] <= hi:
-#             result.append(employee)
-#     return result
-
-
-# Finds an employee by his last name (Model)
-# =======================================================================
-# for employee in employees:
-#     if employee['last_name'] == last_name:
-#         return employee
-# employees = read_csv()

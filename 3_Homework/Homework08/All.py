@@ -97,18 +97,18 @@ def find_employee_by_id(employees: list) -> list:
 # =======================================================================
 
 
-# def find_employees_by_salary_range(employees: list) -> list:
-#     result = []
-#     lo, hi = get_salary_range()
-#     for employee in employees:
-#         if lo <= employee["salary"] <= hi:
-#             result.append(employee)
-#     return result
+def find_employees_by_salary_range(employees: list) -> list:
+    result = []
+    lo, hi = get_salary_range()
+    for employee in employees:
+        if lo <= employee["salary"] <= hi:
+            result.append(employee)
+    return result
 
 
 # Finds an employee by his last name (Model)
 # =======================================================================
-# for employee in employees:
-#     if employee['last_name'] == last_name:
-#         return employee
-# employees = read_csv()
+for employee in employees:
+    if employee['last_name'] == last_name:
+        return employee
+employees = read_csv()
