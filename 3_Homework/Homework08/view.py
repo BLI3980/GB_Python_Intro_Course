@@ -1,5 +1,6 @@
 import os
 from time import sleep
+from turtle import pos
 from tabulate import tabulate
 # from inspect import CO_ASYNC_GENERATOR
 from pathlib import Path
@@ -50,7 +51,7 @@ def get_surname_name_to_search() -> str:
 
 
 def get_position_to_search() -> str:
-    position = input('\nEnter the name of position to search: \n')
+    position = input('\nEnter the name of position to search: ')
     return (position)
 
 # Ask user to provide the range of salaries to search a list of employees.
@@ -61,6 +62,36 @@ def get_salary_range_to_search() -> str:
     lower = float(input('\nEnter the lower limit of a range to search: '))
     upper = float(input('Enter the upper limit of a range to search: '))
     return (lower, upper)
+
+
+# Ask user to provide new employee details.
+# =============================================================================
+
+
+# def get_new_employee_details() -> str:
+#     id = input('\nAssign an id to new employee: ')
+#     surname = input('Enter the surname of new employee: ')
+#     name = input('Enter the name of new employee: ')
+#     last_name = input('Enter the last name of new employee: ')
+#     position = input('Enter the position of new employee: ')
+#     phone_number = input('Enter the phone number of new employee ')
+#     salary = input('Enter the salary of new employee ')
+#     return (id, surname, name, last_name, position, phone_number, salary)
+
+
+def get_new_employee_details() -> list:
+    new = {}
+    new['id'] = input('\nAssign an id to new employee: ')
+    new['surname'] = input('Enter the surname of new employee: ')
+    new['name'] = input('Enter the name of new employee: ')
+    new['last_name'] = input('Enter the last name of new employee: ')
+    new['position'] = input('Enter the position of new employee: ')
+    new['phone_number'] = input('Enter the phone number of new employee ')
+    new['salary'] = input('Enter the salary of new employee ')
+    return (new)
+
+
+# print(get_new_employee_details())
 
 # Print database in simple format.
 # =============================================================================

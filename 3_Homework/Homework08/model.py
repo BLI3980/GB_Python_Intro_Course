@@ -2,7 +2,8 @@ from pathlib import Path
 import json
 import csv
 from view import (get_surname_name_to_search,
-                  get_position_to_search, get_salary_range_to_search)
+                  get_position_to_search, get_salary_range_to_search,
+                  get_new_employee_details)
 
 
 # Uploads DB file in csv extension and outputs it to the format we like.
@@ -73,11 +74,12 @@ def read_json(database: list) -> list:
 # =======================================================================
 
 
-def write_csv(employees: list):
-    with open(Path.cwd() / 'database.csv', 'w', encoding='utf-8') as fout:
-        csv_writer = csv.writer(fout)
-        for employee in employees:
-            csv_writer.writerow(employee.values())
+def write_csv(database: list, employee: list) -> list:
+    with open(database, 'w', encoding='utf-8') as output:
+        csv_writer = csv.writer(output)
+        for row in employee:
+            csv_writer.writerow(row.values())
+
 
 # Takes formatted input and writes what is needed to output json file.
 # =============================================================================
@@ -125,7 +127,6 @@ def find_employees_by_position(database: list) -> list:
 
 def find_employees_by_salary_range(database: list) -> list:
     lower, upper = get_salary_range_to_search()
-    print(type(lower))
     search_result = []
     for employee in database:
         if lower <= float(employee["salary"]) <= upper:
@@ -133,6 +134,27 @@ def find_employees_by_salary_range(database: list) -> list:
     if search_result == []:
         print('\nThere is no salaries within specified range.\n')
     return search_result
+
+# Add new employee to the database.
+# =============================================================================
+
+
+def add_employee(new_employee: dict) -> list:
+    # new_person = new_employee
+    add = []
+    # add.append(input('\nEnter a surname: '))
+    # add.append(input('Enter a first name: '))
+    # add.append(input('Enter a phone number: '))
+    # add.append(input('Enter a description: '))
+    add.append(new_employee)
+    return add
+    with open(read.phonebook(), 'a', encoding='utf-8') as book:
+        for item in new_person:
+            book.write('\n')
+            for pos in range(len(item)-1):
+                book.write(item[pos] + ',')
+            book.write(item[len(item)-1])
+    return new_person
 
 
 # Finds an employee by his ID.

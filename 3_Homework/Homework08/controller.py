@@ -1,9 +1,10 @@
 import os
 from time import sleep
 from view import (show_menu, choose_db_format,
-                  print_result, print_table)
+                  print_result, print_table, get_new_employee_details)
 from model import (read_csv, read_json, write_csv, write_json,
-                   find_employee_by_surname_name, find_employees_by_position, find_employees_by_salary_range)
+                   find_employee_by_surname_name, find_employees_by_position,
+                   find_employees_by_salary_range, add_employee)
 
 
 # def controller():
@@ -24,16 +25,21 @@ from model import (read_csv, read_json, write_csv, write_json,
 # def transform_source(source):
 #     if
 
+source_csv = '3_Homework\Homework08\DB\database.csv'
+source_json = '3_Homework\Homework08\DB\database02.json'
+
 
 def work_with_database():
     # Ask user to choose which database format to use.
     select = choose_db_format()
     if select == 1:
-        source = '3_Homework\Homework08\DB\database.csv'
+        # source = '3_Homework\Homework08\DB\database.csv'
+        source = source_csv
         # Get a list of dictionaries from csv database
         employees = read_csv(source)
     elif select == 2:
-        source = '3_Homework\Homework08\DB\database02.json'
+        # source = '3_Homework\Homework08\DB\database02.json'
+        source = source_json
         employees = read_json(source)
     # print(employees)
     choice = show_menu()
@@ -54,6 +60,9 @@ def work_with_database():
             # Employee(s) by salary range.
             salary_range = find_employees_by_salary_range(employees)
             print_table(salary_range)
+        elif choice == 5:
+            add_new = add_employee(get_new_employee_details)
+            write_csv(source_csv, add_new)
         # elif choice == 4:
         #     user_data = get_new_user()
         #     add_user(phone_book, user_data)
