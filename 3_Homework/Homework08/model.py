@@ -3,7 +3,7 @@ import json
 import csv
 from view import (get_surname_name_to_search,
                   get_position_to_search, get_salary_range_to_search,
-                  get_new_employee_details)
+                  get_new_employee_details, get_search_id)
 
 
 # Uploads DB file in csv extension and outputs it to the format we like.
@@ -57,7 +57,7 @@ def read_json(database: list) -> list:
 # print(read_json(database(2)))
 
 # Takes a DB chosen by user and transforms it into format for printing.
-# =======================================================================
+# =============================================================================
 
 # def database(select: int) -> str:
 #     if select == 1:
@@ -70,19 +70,18 @@ def read_json(database: list) -> list:
 
 # print(database(2))
 
-# Takes formatted input and writes what is needed to output csv file.
-# =======================================================================
+# Takes existing database in csv format re-writes it back to database file.
+# =============================================================================
 
 
-def write_csv(database: list, employee: list) -> list:
-    with open(database, 'w', encoding='utf-8') as output:
+def write_csv(database: str, updates: list) -> list:
+    with open(database, 'w', encoding='utf-8', newline='') as output:
         csv_writer = csv.writer(output)
-        for row in employee:
-            for employee in row:
-                csv_writer.writerow(employee.values())
+        for row in updates:
+            csv_writer.writerow(row.values())
 
 
-# Takes formatted input and writes what is needed to output json file.
+# Takes existing database in json format re-writes it back to database file.
 # =============================================================================
 
 
@@ -140,33 +139,55 @@ def find_employees_by_salary_range(database: list) -> list:
 # =============================================================================
 
 
-def add_employee(new_employee: dict) -> list:
-    # new_person = new_employee
-    add = []
-    # add.append(input('\nEnter a surname: '))
-    # add.append(input('Enter a first name: '))
-    # add.append(input('Enter a phone number: '))
-    # add.append(input('Enter a description: '))
-    add.append(new_employee)
-    return add
-    with open(read.phonebook(), 'a', encoding='utf-8') as book:
-        for item in new_person:
-            book.write('\n')
-            for pos in range(len(item)-1):
-                book.write(item[pos] + ',')
-            book.write(item[len(item)-1])
-    return new_person
+# def add_employee(new_employee: dict) -> list:
+#     # new_person = new_employee
+#     add = []
+#     # add.append(input('\nEnter a surname: '))
+#     # add.append(input('Enter a first name: '))
+#     # add.append(input('Enter a phone number: '))
+#     # add.append(input('Enter a description: '))
+#     add.append(new_employee)
+#     return add
+#     with open(read.phonebook(), 'a', encoding='utf-8') as book:
+#         for item in new_person:
+#             book.write('\n')
+#             for pos in range(len(item)-1):
+#                 book.write(item[pos] + ',')
+#             book.write(item[len(item)-1])
+#     return new_person
 
 
 # Finds an employee by his ID.
 # =============================================================================
-# employees = read_csv()
+# database = read_csv('3_Homework\Homework08\DB\database.csv')
 
 
-# def find_employee_by_id(employees: list) -> list:
-#     for employee in employees:
-#         if employee['id'] == 4:
-#             return employee
+def find_employee_by_id(employees: list, id: str) -> dict:
+    for employee in employees:
+        if employee['id'] == id:
+            return employee
 
 
-# print(find_employee_by_id(employees))
+# print(find_employee_by_id(database, '233'))
+
+# Deletes an employee by his ID.
+# =============================================================================
+# database = read_csv('3_Homework\Homework08\DB\database.csv')
+
+
+# def del_employee_by_id(database: list, id: str) -> list:
+#     for employee in range(len(database)):
+#         # print(database[employee])
+#         for (k, v) in database[employee].items():
+#             if k == 'id' and v == id:
+#                 del database[employee]
+#                 # print(database)
+
+
+def del_employee_by_id(employees: list, employee_delete: dict) -> list:
+    for employee in employees:
+        if employee == employee_delete:
+            # print(employee, employee_delete)
+            employees.remove(employee)
+            # print(employees)
+            return employees

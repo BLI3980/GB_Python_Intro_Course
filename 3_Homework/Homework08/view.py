@@ -22,7 +22,7 @@ def choose_db_format():
 
 
 def show_menu() -> int:
-    print("\n" + "=" * 20)
+    print("\n" + "=" * 35)
     print("Choose an action from the list below: ")
     print("1. Show the entire database")
     print("2. Find an employee")
@@ -34,6 +34,7 @@ def show_menu() -> int:
     print("8. Export data into json file")
     print("9. Export data into csv file")
     print("10. End the work")
+    print("=" * 35 + "\n")
     return int(input("Enter a number of corresponding action: "))
 
 # Ask user to provide employee search last name and first name.
@@ -87,11 +88,40 @@ def get_new_employee_details() -> list:
     new['last_name'] = input('Enter the last name of new employee: ')
     new['position'] = input('Enter the position of new employee: ')
     new['phone_number'] = input('Enter the phone number of new employee ')
-    new['salary'] = input('Enter the salary of new employee ')
+    new['salary'] = input('Enter the salary of new employee: ')
     return (new)
 
 
 # print(get_new_employee_details())
+
+
+# Ask user to provide new employee details.
+# =============================================================================
+
+def get_search_id() -> str:
+    return input('Enter id of employee to edit or delete: ')
+
+
+# print(f'Found id: {get_search_id()}')
+
+# Ask user to provide employee details to edit/change.
+# =============================================================================
+def get_change_values(employee_to_edit: dict, id: str) -> dict:
+    fields = ['surname', 'first_name', 'last name',
+              'position', 'phone_number', 'salary']
+    old_values = employee_to_edit
+    new_values = {'id': id}
+    for item in fields:
+        answer = input(f'Do you want to change "{item}" (Y/N)?: ')
+        if answer.lower() == 'y':
+            new_values[item] = input(f'Enter the new value for "{item}": ')
+            # print(new_values[item])
+        else:
+            new_values[item] = old_values[item]
+        # if answer == 1:
+        #     # fields[item] == input(f'Enter the new value for "{item}":')
+        #     print(fields[item])
+    return new_values
 
 # Print database in simple format.
 # =============================================================================

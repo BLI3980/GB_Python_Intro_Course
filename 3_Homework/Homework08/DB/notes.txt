@@ -27,3 +27,10 @@ Controller:
 
 Main:
  - Source of entry - button
+
+
+To-Do:
+        - Modify json database file to match current format
+ - Remove input source selection, leave only selection of output
+ - sort out all imports in each module
+ - Tidy up all commented rows

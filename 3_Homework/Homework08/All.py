@@ -67,6 +67,7 @@ def write_csv(employees: list):
         for employee in employees:
             csv_writer.writerow(employee.values())
 
+
 # Takes formatted input and writes what is needed to output json file.
 # (Log).
 # =======================================================================
@@ -108,7 +109,7 @@ def find_employees_by_salary_range(employees: list) -> list:
 
 # Finds an employee by his last name (Model)
 # =======================================================================
-for employee in employees:
-    if employee['last_name'] == last_name:
-        return employee
-employees = read_csv()
+# for employee in employees:
+#     if employee['last_name'] == last_name:
+#         return employee
+# employees = read_csv()
