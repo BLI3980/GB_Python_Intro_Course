@@ -164,7 +164,7 @@
 # for v in dictionary:
 #     print(dictionary[v])  # Print all values
 
-# del dictionary['left']  # Delete and element
+# del dictionary['left']  # Delete an element
 
 # for item in dictionary:
 #     print('{}: {}'.format(item, dictionary[item]))
