@@ -357,10 +357,21 @@
 #     print(f_list[i](0))
 
 
-for a in range(1, 151):
-    for b in range(1, 151):
-        for c in range(1, 151):
-            for d in range(1, 151):
-                for e in range(1, 151):
-                    if a**5+b**5+c**5+d**5 == e**5:
-                        print(a+b+c+d+e)
+def input_value():
+    is_OK = False
+    list = [1, 6, 8, 34, 15]
+
+    while not is_OK:
+        try:
+            number = int(input('Enter a number: '))
+            is_OK = True
+            print('Good choice.')
+            if number not in list:
+                is_OK = False
+                print('The number is not in the list. Try again.')
+        except ValueError:
+            print('This is not a number. Try again.')
+    return number
+
+
+print(input_value())

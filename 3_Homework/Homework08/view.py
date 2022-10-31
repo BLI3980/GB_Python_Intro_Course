@@ -1,10 +1,5 @@
-import os
 from time import sleep
-from turtle import pos
 from tabulate import tabulate
-# from inspect import CO_ASYNC_GENERATOR
-from pathlib import Path
-import csv
 
 # Ask user to choose which database format he/she wants to use.
 # =============================================================================
@@ -12,10 +7,18 @@ import csv
 
 def choose_db_format():
     print('\nWhich database format you want to use?')
-    select = int(input('Choose "1" for .csv or "2" for .json: '))
+    is_OK = False
+    while not is_OK:
+        try:
+            select = int(input('Choose "1" for .csv or "2" for .json: '))
+            is_OK = True
+            if select not in [1, 2]:
+                is_OK = False
+                print('Incorrect number. Try again.')
+        except ValueError:
+            print('This is not a number. Try again.')
     return select
 
-# print(choose_db_format())
 
 # Show a menu to choose an action.
 # =============================================================================
@@ -31,11 +34,22 @@ def show_menu() -> int:
     print("5. Add employee")
     print("6. Delete employee")
     print("7. Edit employee details")
-    print("8. Export data into json file")
-    print("9. Export data into csv file")
+    print("8. Export data into csv file")
+    print("9. Export data into json file")
     print("10. End the work")
     print("=" * 35 + "\n")
-    return int(input("Enter a number of corresponding action: "))
+    is_OK = False
+    while not is_OK:
+        try:
+            select = int(input("Enter a number of corresponding action: "))
+            is_OK = True
+            if select not in range(1, 11):
+                is_OK = False
+                print('Incorrect number. Try again.')
+        except ValueError:
+            print('This is not a number. Try again.')
+    return select
+
 
 # Ask user to provide employee search last name and first name.
 # =============================================================================
@@ -45,7 +59,7 @@ def get_surname_name_to_search() -> str:
     surname = input('\nEnter the surname of an employee: ')
     first_name = input('Enter the first name of an employee: ')
     return (surname, first_name)
-    # return f'{last_name}, {first_name}'
+
 
 # Ask user to provide position name to find a list of employees.
 # =============================================================================
@@ -55,13 +69,22 @@ def get_position_to_search() -> str:
     position = input('\nEnter the name of position to search: ')
     return (position)
 
+
 # Ask user to provide the range of salaries to search a list of employees.
 # =============================================================================
 
 
 def get_salary_range_to_search() -> str:
-    lower = float(input('\nEnter the lower limit of a range to search: '))
-    upper = float(input('Enter the upper limit of a range to search: '))
+    is_OK = False
+    while not is_OK:
+        try:
+            lower = float(
+                input('\nEnter the lower limit of a range to search: '))
+            upper = float(
+                input('Enter the upper limit of a range to search: '))
+            is_OK = True
+        except ValueError:
+            print('This is not a number. Try again.')
     return (lower, upper)
 
 
@@ -69,22 +92,11 @@ def get_salary_range_to_search() -> str:
 # =============================================================================
 
 
-# def get_new_employee_details() -> str:
-#     id = input('\nAssign an id to new employee: ')
-#     surname = input('Enter the surname of new employee: ')
-#     name = input('Enter the name of new employee: ')
-#     last_name = input('Enter the last name of new employee: ')
-#     position = input('Enter the position of new employee: ')
-#     phone_number = input('Enter the phone number of new employee ')
-#     salary = input('Enter the salary of new employee ')
-#     return (id, surname, name, last_name, position, phone_number, salary)
-
-
-def get_new_employee_details() -> list:
+def get_new_employee_details(ids: list) -> list:
     new = {}
-    new['id'] = input('\nAssign an id to new employee: ')
+    new['id'] = if_id_exist(ids)
     new['surname'] = input('Enter the surname of new employee: ')
-    new['name'] = input('Enter the name of new employee: ')
+    new['first_name'] = input('Enter the name of new employee: ')
     new['last_name'] = input('Enter the last name of new employee: ')
     new['position'] = input('Enter the position of new employee: ')
     new['phone_number'] = input('Enter the phone number of new employee ')
@@ -92,22 +104,31 @@ def get_new_employee_details() -> list:
     return (new)
 
 
-# print(get_new_employee_details())
-
-
-# Ask user to provide new employee details.
+# Ask user to provide id of employee to search.
 # =============================================================================
 
-def get_search_id() -> str:
-    return input('Enter id of employee to edit or delete: ')
 
+def get_search_id(list_of_ids: list) -> int:
+    is_OK = False
+    ids = list_of_ids
+    while not is_OK:
+        try:
+            number = int(input('Enter id of employee to edit or delete: '))
+            is_OK = True
+            if number not in ids:
+                is_OK = False
+                print('No employee with such id. Try again.')
+        except ValueError:
+            print('This is not a number. Try again.')
+    return number
 
-# print(f'Found id: {get_search_id()}')
 
 # Ask user to provide employee details to edit/change.
 # =============================================================================
+
+
 def get_change_values(employee_to_edit: dict, id: str) -> dict:
-    fields = ['surname', 'first_name', 'last name',
+    fields = ['surname', 'first_name', 'last_name',
               'position', 'phone_number', 'salary']
     old_values = employee_to_edit
     new_values = {'id': id}
@@ -115,13 +136,29 @@ def get_change_values(employee_to_edit: dict, id: str) -> dict:
         answer = input(f'Do you want to change "{item}" (Y/N)?: ')
         if answer.lower() == 'y':
             new_values[item] = input(f'Enter the new value for "{item}": ')
-            # print(new_values[item])
         else:
             new_values[item] = old_values[item]
-        # if answer == 1:
-        #     # fields[item] == input(f'Enter the new value for "{item}":')
-        #     print(fields[item])
     return new_values
+
+
+# Checks if id already exists and if not number is provided
+# =============================================================================
+
+def if_id_exist(list_of_ids: list) -> int:
+    is_OK = False
+    ids = list_of_ids
+    while not is_OK:
+        try:
+            number = int(input('\nAssign an id to new employee: '))
+            is_OK = True
+            if number in ids:
+                is_OK = False
+                print('Such id already exists in database. Try again.')
+        except ValueError:
+            print('This is not a number. Try again.')
+    print('Good choice.')
+    return number
+
 
 # Print database in simple format.
 # =============================================================================

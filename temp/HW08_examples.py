@@ -27,7 +27,7 @@ def show_menu() -> int:
 
 def read_csv() -> list:
     employee = []
-    with open(Path.cwd() / 'database.csv', 'r', encoding='utf-8') as fin:
+    with open(Path.cwd() / 'database_original.csv', 'r', encoding='utf-8') as fin:
         csv_reader = csv.reader(fin)
         for row in csv_reader:
             temp = {}
@@ -41,7 +41,7 @@ def read_csv() -> list:
     return employee
 
 
-# print(read_csv())
+print(read_csv())
 
 # Uploads DB file in json extension and outputs it to the format we like.
 # (Data read)
@@ -50,12 +50,14 @@ def read_csv() -> list:
 
 def read_json() -> list:
     employee = []
-    with open(Path.cwd() / 'database02.json', 'r', encoding='utf-8') as fin:
+    with open(Path.cwd() / "database02_original.json", "r", encoding="utf-8") as fin:
         for line in fin:
             temp = json.loads(line.strip())
             employee.append(temp)
     return employee
 
+
+print(read_json())
 # Takes formatted input and writes what is needed to output csv file.
 # (Log).
 # =======================================================================
@@ -98,13 +100,13 @@ def find_employee_by_id(employees: list) -> list:
 # =======================================================================
 
 
-def find_employees_by_salary_range(employees: list) -> list:
-    result = []
-    lo, hi = get_salary_range()
-    for employee in employees:
-        if lo <= employee["salary"] <= hi:
-            result.append(employee)
-    return result
+# def find_employees_by_salary_range(employees: list) -> list:
+#     result = []
+#     lo, hi = get_salary_range()
+#     for employee in employees:
+#         if lo <= employee["salary"] <= hi:
+#             result.append(employee)
+#     return result
 
 
 # Finds an employee by his last name (Model)

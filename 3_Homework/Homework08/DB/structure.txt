@@ -1,0 +1,34 @@
+View:
+ - Ask to choose database format
+ - Show menu
+ - Ask user to provide employee last name and first name
+ - Ask user to provide position name to find a list of employees
+ - Ask user to provide the range of salaries to search a list of employees
+ - Ask user to provide new employee details
+ - Ask for id to search for editing or deletion
+ - Ask for employee details to edit
+ - Print results to console to show the result of action
+
+
+Model:
+ - Read DB in csv format and convert to a work format
+ - Read DB in json format and convert to a work format
+ - Write DB in csv format after each action
+ - Write DB in json format after each action
+ - Find an employee by his/her surname and first name
+ - Find employees by position
+ - Find employees by salary range
+ - Find employee by id
+ - Delete employee by id
+ - Create list of ids for x-checking when finding search id
+ - Export data into new csv file
+ - Export data into new json file
+ - End work
+
+Controller:
+ - Coordinates View and Model
+
+Main:
+ - Source of entry - button
+
+

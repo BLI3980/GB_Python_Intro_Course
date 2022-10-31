@@ -1,46 +1,35 @@
 import os
-from time import sleep
-from view import (show_menu, choose_db_format,
-                  print_result, print_table, get_new_employee_details,
-                  get_search_id, get_change_values)
+from view import (show_menu, choose_db_format, print_table, 
+                    get_new_employee_details,
+                    get_search_id, get_change_values)
 from model import (read_csv, read_json, write_csv, write_json,
                    find_employee_by_surname_name, find_employees_by_position,
                    find_employees_by_salary_range, find_employee_by_id,
-                   del_employee_by_id)
-
-
-# def controller():
-#     os.system('cls' if os.name == 'nt' else 'clear')
-#     choice = show_menu()
-#     ui.choices(choice)
-#     if ui.if_continue() == 1:
-#         sleep(1)
-#         os.system('cls' if os.name == 'nt' else 'clear')
-#         controller()
-#     else:
-#         sleep(1)
-#         print('\n'+'='*15+' Have a good day! '+'='*15+'\n\n')
-#         sleep(2)
-#         os.system('cls' if os.name == 'nt' else 'clear')
+                   del_employee_by_id, list_of_ids, export_csv, export_json)
 
 
 source_csv = '3_Homework\Homework08\DB\database.csv'
-# source_json = '3_Homework\Homework08\DB\database02.json'
-# clear = os.system('cls' if os.name == 'nt' else 'clear')
+source_json = '3_Homework\Homework08\DB\database.json'
 
 
 def work_with_database():
-    clear = os.system('cls' if os.name == 'nt' else 'clear')
-    clear
-    source = source_csv
-    database = read_csv(source)
+    os.system('cls' if os.name == 'nt' else 'clear')
+    select_db = choose_db_format()
+    if select_db == 1:
+        source = source_csv
+        database = read_csv(source)
+    elif select_db == 2:
+        source = source_json
+        database = read_json(source)
     choice = show_menu()
-    # clear
     while (choice != 10):
         os.system('cls' if os.name == 'nt' else 'clear')
         # 1. All employees.
         if choice == 1:
-            print_table(read_csv(source))
+            if select_db == 1:
+                print_table(read_csv(source))
+            elif select_db == 2:
+                print_table(read_json(source))
         # 2. Employee(s) by surname and name.
         elif choice == 2:
             employee = find_employee_by_surname_name(database)
@@ -55,29 +44,42 @@ def work_with_database():
             print_table(salary_range)
         # 5. Add new employee
         elif choice == 5:
-            new = get_new_employee_details()
+            ids = list_of_ids(database)
+            new = get_new_employee_details(ids)
             database.append(new)
-            write_csv(source, database)
+            if select_db == 1:
+                write_csv(source, database)
+            elif select_db == 2:
+                write_json(source, database)
             print('\nEmployee record is added. See entire table to verify that.')
-
         # 6. Delete employee
         elif choice == 6:
-            id = get_search_id()
+            ids = list_of_ids(database)
+            id = get_search_id(ids)
             employee_to_delete = find_employee_by_id(database, id)
             deleted = del_employee_by_id(database, employee_to_delete)
-            write_csv(source, deleted)
+            if select_db == 1:
+                write_csv(source, deleted)
+            elif select_db == 2:
+                write_json(source, deleted)
             print('\nEmployee record is deleted. See entire table to verify that.')
         # 7. Edit employee
         elif choice == 7:
-            id = get_search_id()
+            ids = list_of_ids(database)
+            id = get_search_id(ids)
             employee_to_edit = find_employee_by_id(database, id)
             updated_details = get_change_values(employee_to_edit, id)
             deleted = del_employee_by_id(database, employee_to_edit)
             database.append(updated_details)
-            write_csv(source, database)
-
-        # elif choice == 5:
-        #     file_name = get_file_name()
-        #     write_txt(file_name, phone_book)
-
+            if select_db == 1:
+                write_csv(source, database)
+            elif select_db == 2:
+                write_json(source, database)
+            print('\nEmployee record is updated. See entire table to verify that.')
+        elif choice == 8:
+            export_csv(database)
+        elif choice == 9:
+            export_json(database)
         choice = show_menu()
+
+
