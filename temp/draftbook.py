@@ -357,21 +357,15 @@
 #     print(f_list[i](0))
 
 
-def input_value():
-    is_OK = False
-    list = [1, 6, 8, 34, 15]
+# for i in range(33):
+#     for j in range(33):
+#         for k in range(33):
+#             for m in range(33):
+#                 if i != j and i != k and i != m and \
+#                         j != k and j != m and k != m:
+#                     if i**3 + j**3 == k**3 + m**3:
+#                         print(i**3 + j**3)
 
-    while not is_OK:
-        try:
-            number = int(input('Enter a number: '))
-            is_OK = True
-            print('Good choice.')
-            if number not in list:
-                is_OK = False
-                print('The number is not in the list. Try again.')
-        except ValueError:
-            print('This is not a number. Try again.')
-    return number
-
-
-print(input_value())
+import datetime
+x = datetime.datetime.now().time
+print(x)
