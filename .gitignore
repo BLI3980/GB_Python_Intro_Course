@@ -127,6 +127,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.libs_08
+.temp08
 
 # Spyder project settings
 .spyderproject
