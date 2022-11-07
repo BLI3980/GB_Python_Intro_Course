@@ -1,5 +1,6 @@
 from time import sleep
 from tabulate import tabulate
+import emoji
 
 # Ask user to choose which database format he/she wants to use.
 # =============================================================================
@@ -26,17 +27,19 @@ def choose_db_format():
 
 def show_menu() -> int:
     print("\n" + "=" * 35)
-    print("Choose an action from the list below: ")
-    print("1. Show the entire database")
-    print("2. Find an employee")
-    print("3. Show a list of employees by position")
-    print("4. Show a list of employees by salary range")
-    print("5. Add employee")
-    print("6. Delete employee")
-    print("7. Edit employee details")
-    print("8. Export data into csv file")
-    print("9. Export data into json file")
-    print("10. End the work")
+    print(emoji.emojize(":play_button:  Choose an action from the list below: "))
+    print(emoji.emojize("1. :department_store: Show the entire database"))
+    print(emoji.emojize("2. :magnifying_glass_tilted_left: Find an employee"))
+    print(emoji.emojize(
+        "3. :man_office_worker: Show a list of employees by position"))
+    print(emoji.emojize(
+        "4. :money_bag: Show a list of employees by salary range"))
+    print(emoji.emojize("5. :NEW_button: Add employee"))
+    print(emoji.emojize("6. :cross_mark: Delete employee"))
+    print(emoji.emojize("7. :hammer_and_wrench:  Edit employee details"))
+    print(emoji.emojize("8. :floppy_disk: Export data into csv file"))
+    print(emoji.emojize("9. :dvd: Export data into json file"))
+    print(emoji.emojize("10. :stop_button:  End the work"))
     print("=" * 35 + "\n")
     is_OK = False
     while not is_OK:
