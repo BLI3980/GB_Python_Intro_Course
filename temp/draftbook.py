@@ -366,6 +366,15 @@
 #                     if i**3 + j**3 == k**3 + m**3:
 #                         print(i**3 + j**3)
 
-import datetime
-x = datetime.datetime.now().time
-print(x)
+# import datetime
+# x = datetime.datetime.now().time
+# print(x)
+
+
+a = str(input('value = '))
+# print(a)
+# print('a')
+if a not in 'aAbB':
+    print('not OK')
+else:
+    print('OK')

@@ -17,8 +17,8 @@
 #     bar.next()
 # bar.finish()
 # =====================================================================
-import emoji
-print(emoji.emojize('Python is :thumbs_up:'))
+# import emoji
+# print(emoji.emojize('Python is :thumbs_up:'))
 # =====================================================================
 # import matplotlib.pyplot as plt
 # import numpy as np
@@ -55,23 +55,23 @@ print(emoji.emojize('Python is :thumbs_up:'))
 # plt.show()
 
 # =====================================================================
-# from telegram import Update
-# from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-# from bot_commands import *
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from bot_commands import *
 
 
-# # async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-# #     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
+# async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+#     await update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 
-# app = ApplicationBuilder().token(
-#     "5668495659:AAELdn76i4FbzyHsiv8dIVFNcvB3gcQGsxY").build()
+app = ApplicationBuilder().token(
+    "5571491845:AAFTek__yjvDFQ1sJvJL90J_OHnGWtYgqdg").build()
 
 
-# print('server start')
-# app.add_handler(CommandHandler("hi", hi_command))
-# app.add_handler(CommandHandler("time", time_command))
-# app.add_handler(CommandHandler("help", help_command))
-# app.add_handler(CommandHandler("sum", sum_command))
+print('server start')
+app.add_handler(CommandHandler("hi", hi_command))
+app.add_handler(CommandHandler("time", time_command))
+app.add_handler(CommandHandler("help", help_command))
+app.add_handler(CommandHandler("sum", sum_command))
 
-# app.run_polling()
+app.run_polling()

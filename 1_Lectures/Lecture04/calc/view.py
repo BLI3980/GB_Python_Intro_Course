@@ -3,4 +3,4 @@ def view_data(data, title):
 
 
 def get_value():
-    return int(input('value = '))
+    return float(input('value = '))

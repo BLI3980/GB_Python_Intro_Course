@@ -77,7 +77,7 @@ def get_position_to_search() -> str:
 # =============================================================================
 
 
-def get_salary_range_to_search() -> str:
+def get_salary_range_to_search() -> float:
     is_OK = False
     while not is_OK:
         try:
