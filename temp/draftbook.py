@@ -371,10 +371,130 @@
 # print(x)
 
 
-a = str(input('value = '))
-# print(a)
-# print('a')
-if a not in 'aAbB':
-    print('not OK')
+# a = str(input('value = '))
+# # print(a)
+# # print('a')
+# if a not in 'aAbB':
+#     print('not OK')
+# else:
+#     print('OK')
+
+# =========================================================================
+# def entry_check1():
+#     is_OK = False
+#     while not is_OK:
+#         try:
+#             entry = input('Enter: ')
+#             if entry.isdigit() or entry == '-':
+#                 is_OK = True
+#             else:
+#                 print('Only digit or "-" are accepted here.')
+#         except:
+#             print('How did yo manage to get here?')
+#     return entry
+
+
+# def entry_check2(entry1, operators):
+#     is_OK = False
+
+#     while not is_OK:
+#         if entry1 == '-':
+#             try:
+#                 entry2 = input('Enter: ')
+#                 if entry2.isdigit():
+#                     is_OK = True
+#                 else:
+#                     print('Only digit entry is accepted here.')
+#             except:
+#                 print('How did yo manage to get here?')
+#         else:
+#             try:
+#                 entry2 = input('Enter: ')
+#                 if entry2.isdigit() or entry2 == '.' or entry2 in operators:
+#                     is_OK = True
+#                 else:
+#                     print('Only digit, "." or math operators are accepted here.')
+#             except:
+#                 print('How did yo manage to get here?')
+#     return entry1 + entry2
+
+
+# def entry_check_subs(previous, operators):
+#     is_OK = False
+#     while not is_OK:
+#         if previous[-1] == '.':
+#             try:
+#                 entry = input('Enter: ')
+#                 if entry.isdigit():
+#                     is_OK = True
+#                 else:
+#                     print('Only digit entry is accepted here.')
+#             except:
+#                 print('How did yo manage to get here?')
+#         elif '.' in previous and previous[-1] != '.':
+#             try:
+#                 entry = input('Enter: ')
+#                 if entry.isdigit() or entry in operators:
+#                     is_OK = True
+#                 else:
+#                     print('Only digit or math operators are accepted here.')
+#             except:
+#                 print('How did yo manage to get here?')
+#         else:
+#             try:
+#                 entry = input('Enter: ')
+#                 if entry.isdigit() or entry == '.' or entry in operators:
+#                     is_OK = True
+#                 else:
+#                     print('Only digit, "." or math operators are accepted here.')
+#             except:
+#                 print('How did yo manage to get here?')
+#     return entry
+
+
+# operators = '+-*/'
+# equal = '='
+
+# # entry1 = input('Enter: ')
+
+# entry1 = entry_check1()
+# # print(entry1)
+
+# entry2 = entry_check2(entry1, operators)
+
+# number1 = entry2
+# print(number1)
+
+# while number1[-1] not in operators:
+#     number1 += entry_check_subs(number1, operators)
+
+# if '.' in number1:
+#     operand1 = float(number1[:-1].strip())
+# else:
+#     operand1 = int(number1[:-1].strip())
+
+# print(operand1)
+# operand2 = 3
+# print(operand2)
+# operator = number1[-1]
+# print(operator)
+
+# if number1[-1] == '+':
+#     result = operand1 + operand2
+# if number1[-1] == '-':
+#     result = operand1 - operand2
+# if number1[-1] == '*':
+#     result = operand1 * operand2
+# if number1[-1] == '/':
+#     result = operand1 / operand2
+# print(f'{operand1} {operator} {operand2} = {result}')
+# exit()
+
+# =========================================================================
+
+s = input("Enter a number: ")
+# digit_check = s.split('.')
+if s.replace('.', '').isdigit():
+    print('ok')
 else:
-    print('OK')
+    print('bad')
