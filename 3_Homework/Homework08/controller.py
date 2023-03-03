@@ -8,8 +8,10 @@ from model import (read_csv, read_json, write_csv, write_json,
                    del_employee_by_id, list_of_ids, export_csv, export_json)
 
 
-source_csv = '3_Homework\Homework08\DB\database.csv'
-source_json = '3_Homework\Homework08\DB\database.json'
+# source_csv = '3_Homework\Homework08\DB\database.csv'
+source_csv = 'C:\_GB\\3_Python\\3_Homework\Homework08\DB\database.csv'
+# source_json = '3_Homework\Homework08\DB\database.json'
+source_json = 'C:\_GB\\3_Python\\3_Homework\Homework08\DB\database.json'
 
 
 def work_with_database():

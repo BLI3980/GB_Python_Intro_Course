@@ -492,9 +492,37 @@
 
 # =========================================================================
 
-s = input("Enter a number: ")
-# digit_check = s.split('.')
-if s.replace('.', '').isdigit():
-    print('ok')
-else:
-    print('bad')
+# s = input("Enter a number: ")
+# # digit_check = s.split('.')
+# if s.replace('.', '').isdigit():
+#     print('ok')
+# else:
+#     print('bad')
+
+
+# numbers = [2, 6, 3, 14, 10, 4, 11, 16, 12, 5, 4, 16, 1, 0, 8, 16, 10, 10, 8, 5, 1, 11, 10,
+#            10, 12, 0, 0, 6, 14, 8, 2, 12, 14, 5, 6, 12, 1, 2, 10, 14, 9, 1, 15, 1, 2, 14, 16, 6, 7, 5]
+# print(len(numbers))
+# print(numbers[-1])
+# print(numbers[::-1])
+# print(('NO', 'YES')['5, 17' in numbers])
+# print(numbers[1:-1])
+
+# list = []
+# for i in range(26):
+#     list.append(chr(97+i)*(i+1))
+# print(list)
+
+# print([chr(97+i)*(i+1) for i in range(26)])
+
+
+# n = int(input())
+# list = []
+# list1 = []
+# for i in range(n):
+#     list.append(int(input()))
+
+# for j in range(n-1):
+#     list1.append(list[j]+list[j+1])
+
+# print(list1)

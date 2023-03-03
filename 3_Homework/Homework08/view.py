@@ -58,10 +58,10 @@ def show_menu() -> int:
 # =============================================================================
 
 
-def get_surname_name_to_search() -> str:
+def get_surname_name_to_search():
     surname = input('\nEnter the surname of an employee: ')
     first_name = input('Enter the first name of an employee: ')
-    return (surname, first_name)
+    return surname, first_name
 
 
 # Ask user to provide position name to find a list of employees.
